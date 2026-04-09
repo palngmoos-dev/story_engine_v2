@@ -1,0 +1,246 @@
+{
+  "project_name": "파국 루트 테스트",
+  "scene_count": 6,
+  "branch": "collapse_route",
+  "relations": {
+    "수아::지훈": -15
+  },
+  "cards": [
+    {
+      "id": "char_{'name': '지훈', 'personality': '차분', 'internal': '불안', 'tone': '절제됨', 'goal': '감정을 숨기지 않고 진실을 마주할 용기를 얻고 싶음', 'goal_progress': 0, 'emotion': '억누름', 'level': 1, 'skills': ['관찰', '회피'], 'priority': 1, 'memory_tags': ['회피', '재회', '미해결'], 'speech_style': '...', 'signature_lines': ['...이 상황, 피할 수는 없겠네.', '...전부 되돌릴 순 없어도, 정리할 수는 있어.']}",
+      "type": "character",
+      "name": {
+        "name": "지훈",
+        "personality": "차분",
+        "internal": "불안",
+        "tone": "절제됨",
+        "goal": "감정을 숨기지 않고 진실을 마주할 용기를 얻고 싶음",
+        "goal_progress": 0,
+        "emotion": "억누름",
+        "level": 1,
+        "skills": [
+          "관찰",
+          "회피"
+        ],
+        "priority": 1,
+        "memory_tags": [
+          "회피",
+          "재회",
+          "미해결"
+        ],
+        "speech_style": "...",
+        "signature_lines": [
+          "...이 상황, 피할 수는 없겠네.",
+          "...전부 되돌릴 순 없어도, 정리할 수는 있어."
+        ]
+      },
+      "emotion": "불안이 더 짙어짐",
+      "level": 7,
+      "goal": 50,
+      "goal_progress": 0,
+      "skills": [],
+      "speech_tag": ""
+    },
+    {
+      "id": "char_{'name': '수아', 'personality': '직진', 'internal': '답답함', 'tone': '직설적', 'goal': '왜 멀어졌는지 답을 듣고 관계를 분명히 하고 싶음', 'goal_progress': 0, 'emotion': '응어리짐', 'level': 1, 'skills': ['직감', '돌파'], 'priority': 2, 'memory_tags': ['재회', '대면', '확인'], 'speech_style': '', 'signature_lines': ['이번엔 그냥 넘어가지 않을 거야.', '이번엔 피하지 말고, 내 눈 보고 말해.']}",
+      "type": "character",
+      "name": {
+        "name": "수아",
+        "personality": "직진",
+        "internal": "답답함",
+        "tone": "직설적",
+        "goal": "왜 멀어졌는지 답을 듣고 관계를 분명히 하고 싶음",
+        "goal_progress": 0,
+        "emotion": "응어리짐",
+        "level": 1,
+        "skills": [
+          "직감",
+          "돌파"
+        ],
+        "priority": 2,
+        "memory_tags": [
+          "재회",
+          "대면",
+          "확인"
+        ],
+        "speech_style": "",
+        "signature_lines": [
+          "이번엔 그냥 넘어가지 않을 거야.",
+          "이번엔 피하지 말고, 내 눈 보고 말해."
+        ]
+      },
+      "emotion": "의심이 커짐",
+      "level": 7,
+      "goal": 50,
+      "goal_progress": 0,
+      "skills": [],
+      "speech_tag": ""
+    },
+    {
+      "id": "space_버스 정류장",
+      "type": "space",
+      "name": "버스 정류장",
+      "mood": "늦은 밤, 정적",
+      "pressure": 0,
+      "description": ""
+    },
+    {
+      "id": "event_재회",
+      "type": "event",
+      "name": "재회",
+      "impact": "감정 충돌",
+      "description": ""
+    },
+    {
+      "id": "object_우산",
+      "type": "object",
+      "name": "우산",
+      "symbolism": "거리감 상징",
+      "effect": "",
+      "description": ""
+    }
+  ],
+  "ending": {
+    "ending_type": "파국형 배드엔딩",
+    "title": "돌아갈 수 없는 선",
+    "summary": "관계와 목표가 완전히 붕괴해, 회복보다 단절이 확정된 엔딩.",
+    "score": {
+      "relation": -15,
+      "avg_goal_progress": 0.0,
+      "branch": "collapse_route",
+      "ending_score": -66.0,
+      "pressure": 2,
+      "recovery_count": 0
+    },
+    "grade": "C"
+  },
+  "stats": {
+    "branches": {
+      "silent_route": 1,
+      "lie_route": 2,
+      "leave_route": 1,
+      "collapse_route": 2
+    },
+    "choices": {
+      "침묵을 유지한다": 1,
+      "거짓말을 한다": 2,
+      "자리를 떠난다": 1,
+      "파국을 선언한다": 2
+    },
+    "endings": {
+      "파국형 배드엔딩": 1
+    }
+  },
+  "route_trace": [
+    "silent_route",
+    "lie_route",
+    "leave_route",
+    "collapse_route",
+    "lie_route",
+    "collapse_route"
+  ],
+  "route_transitions": [
+    {
+      "from": "main",
+      "to": "silent_route",
+      "scene_count": 1
+    },
+    {
+      "from": "silent_route",
+      "to": "lie_route",
+      "scene_count": 2
+    },
+    {
+      "from": "lie_route",
+      "to": "leave_route",
+      "scene_count": 3
+    },
+    {
+      "from": "leave_route",
+      "to": "collapse_route",
+      "scene_count": 4
+    },
+    {
+      "from": "collapse_route",
+      "to": "lie_route",
+      "scene_count": 5
+    },
+    {
+      "from": "lie_route",
+      "to": "collapse_route",
+      "scene_count": 6
+    }
+  ],
+  "recovery_count": 0,
+  "history": [
+    "[장면 1 시작]\n장소: 버스 정류장\n분위기: 늦은 밤, 정적\n핵심 사건: 재회\n사건 의미: \n장면 템플릿: 같은 장소인데도 아직 감정의 좌표가 맞지 않는다.\n현재 루트: main\n현재 관계 단계: 불확실 (0)\n관계 온도: 중립\n장면 압력: 0\n평균 목표 달성도: 0.0\n누적 기억 요약: 아직 강한 누적 기억은 형성되지 않았다.\n\n{'name': '지훈', 'personality': '차분', 'internal': '불안', 'tone': '절제됨', 'goal': '감정을 숨기지 않고 진실을 마주할 용기를 얻고 싶음', 'goal_progress': 0, 'emotion': '억누름', 'level': 1, 'skills': ['관찰', '회피'], 'priority': 1, 'memory_tags': ['회피', '재회', '미해결'], 'speech_style': '...', 'signature_lines': ['...이 상황, 피할 수는 없겠네.', '...전부 되돌릴 순 없어도, 정리할 수는 있어.']}: \"이상하게 꼬이네.\"\n(속마음: )\n(현재 감정: 0)\n(말투: )\n(현재 목표: 50)\n(목표 달성도: 0 / 아직 멀다)\n(관계 기류: 아직 어느 쪽으로 기울지 모르는 거리감이 흐른다.)\n(스킬 작동: 자기 방식대로 이 장면을 버티고 있다.)\n시선이 엇갈린다.\n\n{'name': '수아', 'personality': '직진', 'internal': '답답함', 'tone': '직설적', 'goal': '왜 멀어졌는지 답을 듣고 관계를 분명히 하고 싶음', 'goal_progress': 0, 'emotion': '응어리짐', 'level': 1, 'skills': ['직감', '돌파'], 'priority': 2, 'memory_tags': ['재회', '대면', '확인'], 'speech_style': '', 'signature_lines': ['이번엔 그냥 넘어가지 않을 거야.', '이번엔 피하지 말고, 내 눈 보고 말해.']}: \"이상하게 꼬이네.\"\n(속마음: )\n(현재 감정: 0)\n(말투: )\n(현재 목표: 50)\n(목표 달성도: 0 / 아직 멀다)\n(관계 기류: 아직 어느 쪽으로 기울지 모르는 거리감이 흐른다.)\n(스킬 작동: 자기 방식대로 이 장면을 버티고 있다.)\n짧은 숨이 서로의 말보다 더 크게 들린다.\n\n(소품: 우산 — )\n그 소품이 장면의 감정선을 미세하게 흔든다.\n\n[장면 1 끝]",
+    "[장면 2 시작]\n장소: 버스 정류장\n분위기: 늦은 밤, 정적, 침묵이 소리보다 더 날카롭게 둘 사이를 가른다.\n핵심 사건: 재회\n사건 의미: \n장면 템플릿: 아무 말도 하지 않는 선택이 더 큰 긴장을 만든다.\n현재 루트: silent_route\n현재 관계 단계: 긴장 (-1)\n관계 온도: 차가운 긴장\n장면 압력: 1\n평균 목표 달성도: 0.0\n누적 기억 요약: 침묵을 유지한다 이후 관계 -1, 평균 목표 0.0, 현재 루트 silent_route\n이전 선택 반영: 침묵을 유지한다\n\n{'name': '지훈', 'personality': '차분', 'internal': '불안', 'tone': '절제됨', 'goal': '감정을 숨기지 않고 진실을 마주할 용기를 얻고 싶음', 'goal_progress': 0, 'emotion': '억누름', 'level': 1, 'skills': ['관찰', '회피'], 'priority': 1, 'memory_tags': ['회피', '재회', '미해결'], 'speech_style': '...', 'signature_lines': ['...이 상황, 피할 수는 없겠네.', '...전부 되돌릴 순 없어도, 정리할 수는 있어.']}: \"\"\n(속마음: )\n(현재 감정: 감정을 더 숨김)\n(말투: )\n(현재 목표: 50)\n(목표 달성도: 0 / 아직 멀다)\n(관계 기류: 쉽게 믿지 못하는 긴장이 대사 사이에 남아 있다.)\n(스킬 작동: 자기 방식대로 이 장면을 버티고 있다.)\n잠깐 침묵이 흐른다.\n\n{'name': '수아', 'personality': '직진', 'internal': '답답함', 'tone': '직설적', 'goal': '왜 멀어졌는지 답을 듣고 관계를 분명히 하고 싶음', 'goal_progress': 0, 'emotion': '응어리짐', 'level': 1, 'skills': ['직감', '돌파'], 'priority': 2, 'memory_tags': ['재회', '대면', '확인'], 'speech_style': '', 'signature_lines': ['이번엔 그냥 넘어가지 않을 거야.', '이번엔 피하지 말고, 내 눈 보고 말해.']}: \"\"\n(속마음: )\n(현재 감정: 답답함이 커짐)\n(말투: )\n(현재 목표: 50)\n(목표 달성도: 0 / 아직 멀다)\n(관계 기류: 쉽게 믿지 못하는 긴장이 대사 사이에 남아 있다.)\n(스킬 작동: 자기 방식대로 이 장면을 버티고 있다.)\n공기가 묘하게 무거워진다.\n\n(소품: 우산 — )\n그 소품이 장면의 감정선을 미세하게 흔든다.\n\n[장면 2 끝]",
+    "[장면 3 시작]\n장소: 버스 정류장\n분위기: 늦은 밤, 정적\n핵심 사건: 재회\n사건 의미: \n장면 템플릿: 숨기려는 말이 오히려 장면을 더 무겁게 만든다.\n현재 루트: lie_route\n현재 관계 단계: 긴장 (-3)\n관계 온도: 차가운 긴장\n장면 압력: 1\n평균 목표 달성도: 0.0\n누적 기억 요약: 침묵을 유지한다 이후 관계 -1, 평균 목표 0.0, 현재 루트 silent_route / 거짓말을 한다 이후 관계 -3, 평균 목표 0.0, 현재 루트 lie_route\n이전 선택 반영: 거짓말을 한다\n\n{'name': '지훈', 'personality': '차분', 'internal': '불안', 'tone': '절제됨', 'goal': '감정을 숨기지 않고 진실을 마주할 용기를 얻고 싶음', 'goal_progress': 0, 'emotion': '억누름', 'level': 1, 'skills': ['관찰', '회피'], 'priority': 1, 'memory_tags': ['회피', '재회', '미해결'], 'speech_style': '...', 'signature_lines': ['...이 상황, 피할 수는 없겠네.', '...전부 되돌릴 순 없어도, 정리할 수는 있어.']}: \"이상하게 꼬이네.\"\n(속마음: )\n(현재 감정: 불안이 더 짙어짐)\n(말투: )\n(현재 목표: 50)\n(목표 달성도: 0 / 아직 멀다)\n(관계 기류: 쉽게 믿지 못하는 긴장이 대사 사이에 남아 있다.)\n(스킬 작동: 자기 방식대로 이 장면을 버티고 있다.)\n말보다 먼저 분위기가 감정을 밀어 올린다.\n\n{'name': '수아', 'personality': '직진', 'internal': '답답함', 'tone': '직설적', 'goal': '왜 멀어졌는지 답을 듣고 관계를 분명히 하고 싶음', 'goal_progress': 0, 'emotion': '응어리짐', 'level': 1, 'skills': ['직감', '돌파'], 'priority': 2, 'memory_tags': ['재회', '대면', '확인'], 'speech_style': '', 'signature_lines': ['이번엔 그냥 넘어가지 않을 거야.', '이번엔 피하지 말고, 내 눈 보고 말해.']}: \"이상하게 꼬이네.\"\n(속마음: )\n(현재 감정: 의심이 커짐)\n(말투: )\n(현재 목표: 50)\n(목표 달성도: 0 / 아직 멀다)\n(관계 기류: 쉽게 믿지 못하는 긴장이 대사 사이에 남아 있다.)\n(스킬 작동: 자기 방식대로 이 장면을 버티고 있다.)\n아무 말도 하지 않지만 감정은 움직인다.\n\n(소품: 우산 — )\n그 소품이 장면의 감정선을 미세하게 흔든다.\n\n[장면 3 끝]",
+    "[장면 4 시작]\n장소: 버스 정류장\n분위기: 늦은 밤, 정적, 떠나려는 발걸음과 붙잡으려는 시선이 공기를 갈라놓는다., 감정의 밀도가 높아져 작은 말도 크게 흔들린다.\n핵심 사건: 재회가 이탈과 추격의 기류로 번지는 순간\n사건 의미: \n장면 템플릿: 한 걸음 물러나는 움직임이 더 큰 균열을 부른다.\n현재 루트: leave_route\n현재 관계 단계: 심한 긴장 (-5)\n관계 온도: 냉각 위기\n장면 압력: 2\n평균 목표 달성도: 0.0\n누적 기억 요약: 거짓말을 한다 이후 관계 -3, 평균 목표 0.0, 현재 루트 lie_route / 자리를 떠난다 이후 관계 -5, 평균 목표 0.0, 현재 루트 leave_route\n이전 선택 반영: 자리를 떠난다\n\n{'name': '지훈', 'personality': '차분', 'internal': '불안', 'tone': '절제됨', 'goal': '감정을 숨기지 않고 진실을 마주할 용기를 얻고 싶음', 'goal_progress': 0, 'emotion': '억누름', 'level': 1, 'skills': ['관찰', '회피'], 'priority': 1, 'memory_tags': ['회피', '재회', '미해결'], 'speech_style': '...', 'signature_lines': ['...이 상황, 피할 수는 없겠네.', '...전부 되돌릴 순 없어도, 정리할 수는 있어.']}: \"잠깐만. 난 아직 정리가 안 돼.\"\n(속마음: )\n(현재 감정: 회피와 죄책감이 동시에 생김)\n(말투: )\n(현재 목표: 50)\n(목표 달성도: 0 / 아직 멀다)\n(관계 기류: 말 한마디마다 상처와 반발이 먼저 튀어 오른다.)\n(스킬 작동: 자기 방식대로 이 장면을 버티고 있다.)\n같은 공간인데도 서로 다른 세계에 선 듯 멀다.\n\n{'name': '수아', 'personality': '직진', 'internal': '답답함', 'tone': '직설적', 'goal': '왜 멀어졌는지 답을 듣고 관계를 분명히 하고 싶음', 'goal_progress': 0, 'emotion': '응어리짐', 'level': 1, 'skills': ['직감', '돌파'], 'priority': 2, 'memory_tags': ['재회', '대면', '확인'], 'speech_style': '', 'signature_lines': ['이번엔 그냥 넘어가지 않을 거야.', '이번엔 피하지 말고, 내 눈 보고 말해.']}: \"잠깐만. 난 아직 정리가 안 돼.\"\n(속마음: )\n(현재 감정: 붙잡고 싶은 마음이 커짐)\n(말투: )\n(현재 목표: 50)\n(목표 달성도: 0 / 아직 멀다)\n(관계 기류: 말 한마디마다 상처와 반발이 먼저 튀어 오른다.)\n(스킬 작동: 자기 방식대로 이 장면을 버티고 있다.)\n공기 자체가 서로를 밀어내는 듯하다.\n\n(소품: 우산 — )\n그 소품이 장면의 감정선을 미세하게 흔든다.\n\n[장면 4 끝]",
+    "[장면 5 시작]\n장소: 버스 정류장\n분위기: 늦은 밤, 정적, 지금 건드리면 모든 게 무너질 것 같은 위태로움이 맴돈다., 감정의 밀도가 높아져 작은 말도 크게 흔들린다.\n핵심 사건: 재회가 돌이킬 수 없는 파열의 순간으로 번진다\n사건 의미: \n장면 템플릿: 장면 전체가 더는 되돌리기 어려운 선으로 밀려간다.\n현재 루트: collapse_route\n현재 관계 단계: 파국 직전 (-9)\n관계 온도: 냉각 위기\n장면 압력: 2\n평균 목표 달성도: 0.0\n누적 기억 요약: 자리를 떠난다 이후 관계 -5, 평균 목표 0.0, 현재 루트 leave_route / 파국을 선언한다 이후 관계 -9, 평균 목표 0.0, 현재 루트 collapse_route\n이전 선택 반영: 파국을 선언한다\n\n{'name': '지훈', 'personality': '차분', 'internal': '불안', 'tone': '절제됨', 'goal': '감정을 숨기지 않고 진실을 마주할 용기를 얻고 싶음', 'goal_progress': 0, 'emotion': '억누름', 'level': 1, 'skills': ['관찰', '회피'], 'priority': 1, 'memory_tags': ['회피', '재회', '미해결'], 'speech_style': '...', 'signature_lines': ['...이 상황, 피할 수는 없겠네.', '...전부 되돌릴 순 없어도, 정리할 수는 있어.']}: \"여기서 더 가면 아무것도 못 되돌려.\"\n(속마음: )\n(현재 감정: 완전히 무너질 각오를 함)\n(말투: )\n(현재 목표: 50)\n(목표 달성도: 0 / 아직 멀다)\n(관계 기류: 말 한마디마다 상처와 반발이 먼저 튀어 오른다.)\n(스킬 작동: 자기 방식대로 이 장면을 버티고 있다.)\n말끝마다 상처가 묻어나온다.\n\n{'name': '수아', 'personality': '직진', 'internal': '답답함', 'tone': '직설적', 'goal': '왜 멀어졌는지 답을 듣고 관계를 분명히 하고 싶음', 'goal_progress': 0, 'emotion': '응어리짐', 'level': 1, 'skills': ['직감', '돌파'], 'priority': 2, 'memory_tags': ['재회', '대면', '확인'], 'speech_style': '', 'signature_lines': ['이번엔 그냥 넘어가지 않을 거야.', '이번엔 피하지 말고, 내 눈 보고 말해.']}: \"여기서 더 가면 아무것도 못 되돌려.\"\n(속마음: )\n(현재 감정: 붙잡고 싶은 마음과 분노가 충돌함)\n(말투: )\n(현재 목표: 50)\n(목표 달성도: 0 / 아직 멀다)\n(관계 기류: 말 한마디마다 상처와 반발이 먼저 튀어 오른다.)\n(스킬 작동: 자기 방식대로 이 장면을 버티고 있다.)\n말보다 먼저 분위기가 감정을 밀어 올린다.\n\n(소품: 우산 — )\n그 소품이 장면의 감정선을 미세하게 흔든다.\n\n[장면 5 끝]",
+    "[장면 6 시작]\n장소: 버스 정류장\n분위기: 늦은 밤, 정적, 감정의 밀도가 높아져 작은 말도 크게 흔들린다.\n핵심 사건: 재회\n사건 의미: \n장면 템플릿: 진실을 비껴간 대가가 공기 속에 쌓이기 시작한다.\n현재 루트: lie_route\n현재 관계 단계: 완전 붕괴 직전 (-11)\n관계 온도: 빙점 붕괴\n장면 압력: 2\n평균 목표 달성도: 0.0\n누적 기억 요약: 파국을 선언한다 이후 관계 -9, 평균 목표 0.0, 현재 루트 collapse_route / 거짓말을 한다 이후 관계 -11, 평균 목표 0.0, 현재 루트 lie_route\n이전 선택 반영: 거짓말을 한다\n\n{'name': '지훈', 'personality': '차분', 'internal': '불안', 'tone': '절제됨', 'goal': '감정을 숨기지 않고 진실을 마주할 용기를 얻고 싶음', 'goal_progress': 0, 'emotion': '억누름', 'level': 1, 'skills': ['관찰', '회피'], 'priority': 1, 'memory_tags': ['회피', '재회', '미해결'], 'speech_style': '...', 'signature_lines': ['...이 상황, 피할 수는 없겠네.', '...전부 되돌릴 순 없어도, 정리할 수는 있어.']}: \"여기서 멈추는 게 마지막일지도 몰라.\"\n(속마음: )\n(현재 감정: 불안이 더 짙어짐)\n(말투: )\n(현재 목표: 50)\n(목표 달성도: 0 / 아직 멀다)\n(관계 기류: 말 한마디마다 상처와 반발이 먼저 튀어 오른다.)\n(스킬 작동: 자기 방식대로 이 장면을 버티고 있다.)\n공기 자체가 서로를 밀어내는 듯하다.\n\n{'name': '수아', 'personality': '직진', 'internal': '답답함', 'tone': '직설적', 'goal': '왜 멀어졌는지 답을 듣고 관계를 분명히 하고 싶음', 'goal_progress': 0, 'emotion': '응어리짐', 'level': 1, 'skills': ['직감', '돌파'], 'priority': 2, 'memory_tags': ['재회', '대면', '확인'], 'speech_style': '', 'signature_lines': ['이번엔 그냥 넘어가지 않을 거야.', '이번엔 피하지 말고, 내 눈 보고 말해.']}: \"여기서 멈추는 게 마지막일지도 몰라.\"\n(속마음: )\n(현재 감정: 의심이 커짐)\n(말투: )\n(현재 목표: 50)\n(목표 달성도: 0 / 아직 멀다)\n(관계 기류: 말 한마디마다 상처와 반발이 먼저 튀어 오른다.)\n(스킬 작동: 자기 방식대로 이 장면을 버티고 있다.)\n말끝마다 상처가 묻어나온다.\n\n(소품: 우산 — )\n그 소품이 장면의 감정선을 미세하게 흔든다.\n\n[장면 6 끝]"
+  ],
+  "scene_summaries": [
+    "scene=1|branch=main|relation=0|choice=침묵을 유지한다",
+    "scene=2|branch=silent_route|relation=-1|choice=거짓말을 한다",
+    "scene=3|branch=lie_route|relation=-3|choice=자리를 떠난다",
+    "scene=4|branch=leave_route|relation=-5|choice=파국을 선언한다",
+    "scene=5|branch=collapse_route|relation=-9|choice=거짓말을 한다",
+    "scene=6|branch=lie_route|relation=-11|choice=파국을 선언한다"
+  ],
+  "memory_notes": [
+    "침묵을 유지한다 이후 관계 -1, 평균 목표 0.0, 현재 루트 silent_route",
+    "거짓말을 한다 이후 관계 -3, 평균 목표 0.0, 현재 루트 lie_route",
+    "자리를 떠난다 이후 관계 -5, 평균 목표 0.0, 현재 루트 leave_route",
+    "파국을 선언한다 이후 관계 -9, 평균 목표 0.0, 현재 루트 collapse_route",
+    "거짓말을 한다 이후 관계 -11, 평균 목표 0.0, 현재 루트 lie_route",
+    "파국을 선언한다 이후 관계 -15, 평균 목표 0.0, 현재 루트 collapse_route"
+  ],
+  "choice_log": [
+    {
+      "scene_no": 1,
+      "choice": "침묵을 유지한다",
+      "branch": "silent_route"
+    },
+    {
+      "scene_no": 2,
+      "choice": "거짓말을 한다",
+      "branch": "lie_route"
+    },
+    {
+      "scene_no": 3,
+      "choice": "자리를 떠난다",
+      "branch": "leave_route"
+    },
+    {
+      "scene_no": 4,
+      "choice": "파국을 선언한다",
+      "branch": "collapse_route"
+    },
+    {
+      "scene_no": 5,
+      "choice": "거짓말을 한다",
+      "branch": "lie_route"
+    },
+    {
+      "scene_no": 6,
+      "choice": "파국을 선언한다",
+      "branch": "collapse_route"
+    }
+  ],
+  "used_lines": [
+    "시선이 엇갈린다.",
+    "짧은 숨이 서로의 말보다 더 크게 들린다.",
+    "잠깐 침묵이 흐른다.",
+    "공기가 묘하게 무거워진다.",
+    "말보다 먼저 분위기가 감정을 밀어 올린다.",
+    "아무 말도 하지 않지만 감정은 움직인다.",
+    "같은 공간인데도 서로 다른 세계에 선 듯 멀다.",
+    "공기 자체가 서로를 밀어내는 듯하다.",
+    "말끝마다 상처가 묻어나온다.",
+    "말보다 먼저 분위기가 감정을 밀어 올린다.",
+    "공기 자체가 서로를 밀어내는 듯하다.",
+    "말끝마다 상처가 묻어나온다."
+  ],
+  "epilogue": "장면은 끝났지만, 둘 사이에 남은 건 미련보다 단절의 감각에 더 가깝다."
+}
