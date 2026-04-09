@@ -130,7 +130,29 @@ def clone_cards(cards):
     return deepcopy(cards)
 
 
-def create_character_card(name: str, emotion: int = 0, level: int = 1, goal: int = 50):
+def create_character_card(name, emotion=0, level=1, goal=50):
+    if isinstance(name, dict):
+        raw = name
+        char_name = raw.get("name", "unknown")
+        return {
+            "id": f"char_{char_name}",
+            "type": "character",
+            "name": char_name,
+            "personality": raw.get("personality", ""),
+            "internal": raw.get("internal", ""),
+            "tone": raw.get("tone", ""),
+            "goal": raw.get("goal", goal),
+            "goal_progress": raw.get("goal_progress", 0),
+            "emotion": raw.get("emotion", emotion),
+            "level": raw.get("level", level),
+            "skills": raw.get("skills", []),
+            "priority": raw.get("priority", 0),
+            "memory_tags": raw.get("memory_tags", []),
+            "speech_style": raw.get("speech_style", ""),
+            "signature_lines": raw.get("signature_lines", []),
+            "last_choice": raw.get("last_choice", ""),
+        }
+
     return {
         "id": f"char_{name}",
         "type": "character",
@@ -140,9 +162,8 @@ def create_character_card(name: str, emotion: int = 0, level: int = 1, goal: int
         "goal": goal,
         "goal_progress": 0,
         "skills": [],
-        "speech_tag": "",
+        "speech_style": "",
     }
-
 
 def relation_label(score: int) -> str:
     for low, high, label in RELATION_LABELS:
