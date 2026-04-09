@@ -1,0 +1,8 @@
+.venv/
+venv/
+__pycache__/
+*.pyc
+data/
+user_states.json
+projects_store.json
+.env
