@@ -6,9 +6,10 @@ from datetime import datetime
 from pathlib import Path
 
 # --- Configuration ---
-SOURCE_DIR = "E:\\myhub\\writing"
-DEST_A_WIN = "E:\\myhub_backups"
+SOURCE_DIR = "D:\\아름다운 여행 4.25"
+DEST_A_WIN = "D:\\아름다운 여행 4.25\\backups"
 DEST_B_WIN = "G:\\My Drive\\GrandAtelier_Cloud_Backup"
+GITHUB_REMOTE = "https://github.com/palngmoos-dev/moosking_abc.git"
 MAX_BACKUPS = 5
 
 LOG_FILE = os.path.join(SOURCE_DIR, "backup_log.txt")
@@ -70,6 +71,43 @@ def backup_to_g_drive_via_powershell(zip_filename, path_name, win_destination):
             
     except Exception as e:
         msg = f"FAILED: {path_name} ({win_destination}) - Reason: {e}"
+        print(msg)
+        logging.error(msg)
+        return False
+
+def backup_to_github():
+    """Performs a git commit and push to the new GitHub repository."""
+    try:
+        print("[INFO] Starting GitHub backup (Git Push)...")
+        # Ensure we are in the source directory
+        os.chdir(SOURCE_DIR)
+        
+        # 1. Git Add
+        subprocess.run(["git", "add", "."], check=True)
+        
+        # 2. Git Commit
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        commit_message = f"Auto-backup: {timestamp}"
+        # We use a try-except for commit in case there are no changes
+        subprocess.run(["git", "commit", "-m", commit_message], capture_output=True)
+        
+        # 3. Git Push
+        result = subprocess.run(["git", "push", "origin", "main"], capture_output=True, text=True)
+        
+        if result.returncode == 0:
+            msg = "SUCCESS: GitHub Backup (moosking_abc.git)"
+            print(msg)
+            logging.info(msg)
+            return True
+        else:
+            # Check if it's just "everything up-to-date"
+            if "Everything up-to-date" in result.stderr or "Everything up-to-date" in result.stdout:
+                print("INFO: GitHub is already up-to-date.")
+                return True
+            raise Exception(result.stderr.strip())
+            
+    except Exception as e:
+        msg = f"FAILED: GitHub Backup - Reason: {e}"
         print(msg)
         logging.error(msg)
         return False
@@ -150,6 +188,9 @@ def main(cleanup=False):
             # 2. Backup to Destinations
             # Path B: Google Drive (via PowerShell)
             backup_to_g_drive_via_powershell(actual_zip_filename, "구글 드라이브", DEST_B_WIN)
+            
+            # Path C: GitHub (New Master Backup)
+            backup_to_github()
             
             # Note: No need to copy to DEST_A because it's already there!
 
