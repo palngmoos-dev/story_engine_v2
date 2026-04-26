@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Noto Serif", serif;
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+
+  --color-primary: #532aa8;
+  --color-primary-container: #6b46c1;
+  --color-secondary: #9f4200;
+  --color-secondary-container: #ff7a2b;
+  --color-tertiary: #004884;
+  --color-background: #f9f9fb;
+  --color-surface: #ffffff;
+  --color-surface-container: #eeeef0;
+  --color-on-surface: #1a1c1d;
+  --color-on-surface-variant: #494453;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-on-surface font-sans antialiased;
+    background-image: radial-gradient(circle at 50% 0%, #ffffff 0%, #f9f9fb 70%);
+    min-height: 100vh;
+  }
+}
+
+.glass-morphism {
+  @apply backdrop-blur-xl bg-white/70 border border-white/20 shadow-xl;
+}
+
+.card-shadow {
+  box-shadow: 0 12px 32px -4px rgba(83, 42, 168, 0.08);
+}
+
+.workshop-grain {
+  background-image: radial-gradient(#d9dadc 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+

@@ -1,0 +1,11 @@
+# Backups and Large Files
+backups/
+*.tar.gz
+*.zip
+*.pptx
+*.zip
+*.json
+.git/
+node_modules/
+__pycache__/
+.DS_Store

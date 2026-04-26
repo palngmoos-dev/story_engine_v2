@@ -1,0 +1,302 @@
+"""
+Scene Engine for Narrative Simulation.
+Coordinates Core and Card engines to generate scenes and manage turns.
+"""
+
+import random
+import os
+import sys
+
+# Add parent directory to sys.path to find ollama_client if running from here
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+try:
+    from . import core_engine as core
+    from . import card_engine as cards
+except ImportError:
+    import core_engine as core
+    import card_engine as cards
+import ollama_client
+
+# --- Load Master Prompt ---
+def _load_master_prompt():
+    try:
+        # Prompt is now in the same folder as scene_engine.py
+        current_dir = os.path.dirname(__file__)
+        path = os.path.join(current_dir, "master_prompt.md")
+        if os.path.exists(path):
+            with open(path, "r", encoding="utf-8") as f:
+                return f.read()
+    except Exception:
+        pass
+    return "당신은 서사 엔진의 화자입니다."
+
+MASTER_PROMPT = _load_master_prompt()
+
+# --- Label Mappings (Ported for tests) ---
+def _emotion_label(level: int) -> str:
+    mapping = {
+        -1: "모든 감정이 마모되고 비현실적 공허감에 휩싸인 파국 상태 (Void)",
+        0: "매우 건조하고 감정이 거의 없는 상태",
+        1: "조용하고 차분한 상태",
+        2: "약한 긴장과 미묘한 변화가 있는 상태",
+        3: "불안하거나 의미가 흔들리는 상태",
+        4: "강한 긴장과 감정이 올라오는 상태",
+        5: "폭발 직전의 감정 상태",
+    }
+    return mapping.get(level, "차분한 상태")
+
+def _apply_foreshadow_recovery(line: str, scene_no: int) -> str:
+    score = core._TIMING_STATE["suspicion"] * 2 + core._TIMING_STATE["pressure"] + core._TIMING_STATE["echo"]
+    if scene_no < 6 or score < 6: return line
+    released = [m for m in core._FORESHADOW_QUEUE if m["release_at"] <= scene_no]
+    if released:
+        picked = released[0]["scene"]
+        core._MEMORY_LONG.append(picked)
+        core._FORESHADOW_QUEUE.remove(released[0])
+        core._TIMING_STATE["suspicion"] = max(0, core._TIMING_STATE["suspicion"] - 2)
+        core._TIMING_STATE["pressure"] = max(0, core._TIMING_STATE["pressure"] - 1)
+        core._TIMING_STATE["echo"] = max(0, core._TIMING_STATE["echo"] - 1)
+        return line.rstrip(". ") + f". [순간, 과거의 잔상('{picked}')이 뇌리를 스치고 지나간다.]"
+    return line
+
+def _apply_peaceful_atmosphere(line: str, state_tag: str) -> str:
+    if state_tag == "STILLNESS":
+        phrases = [
+            " 주변에 고요한 정적이 찾아오며 마음이 한결 가벼워진다.",
+            " 창밖의 햇살이 부드럽게 내리쬐며 평온한 갈무리가 시작된다.",
+            " 모든 소란이 잦아들고 아스라한 여운만이 방 안을 채운다."
+        ]
+        return line.rstrip(". ") + random.choice(phrases)
+    return line
+
+def _apply_void_atmosphere(line: str, effective_emotion: int) -> str:
+    if effective_emotion == -1:
+        phrases = [
+            " 주변의 모든 소리가 사라지고 오직 기괴한 공허함만이 맴돈다.",
+            " 의미를 잃어버린 풍경 속에서 끝없는 붕괴의 감각이 밀려든다.",
+            " 더 이상 아무것도 덧붙일 수 없는 텅 빈 파국이 내려앉았다."
+        ]
+        return line.rstrip(". ") + random.choice(phrases)
+    return line
+
+def generate_next_scene(user_input: str, scene_no: int, duration: int = 5, test_mode: bool = False) -> str:
+    # 1. Automatic Emotion Increment
+    if scene_no % 2 == 0 and core._CURRENT_EMOTION < 5:
+        core._CURRENT_EMOTION += 1
+    
+    # 2. State Resolution
+    is_void = core._is_void_moment()
+    effective_emotion = -1 if is_void else core._CURRENT_EMOTION
+    emotion_text = _emotion_label(effective_emotion)
+    
+    # 3. Text Generation
+    if test_mode:
+        line = f"[{emotion_text}] 테스트 문구입니다."
+    else:
+        # Build AI Context Block based on new hierarchical structure
+        tag = core.get_current_state_tag()
+        state = core.get_state()
+        
+        duration_guide = (
+            f"핵심 임팩트 위주로 매우 빠르게 전개하십시오. (비트 중심)" if duration <= 3 else
+            f"장면의 공기감과 깊은 내면 묘사에 집중하여 천천히 전개하십시오. (분위기 중심)" if duration >= 15 else
+            f"대사와 행동을 균형 있게 배치하여 풍성하게 전개하십시오."
+        )
+
+        # Lead Character Formatting
+        lead = state["lead_character"]
+        lead_text = f"{lead['name']} (나이:{lead['age']}, 성별:{lead['gender']}, MBTI:{lead['mbti']}, 직업:{lead['occupation']}, 성격:{lead['personality']}, 단점:{lead['flaw']}, 스킬:{lead['skill']})" if lead else "없음"
+        
+        core_state = core.get_state()
+        history = core.get_history()
+        
+        history_text = core.build_story_history(history)
+        memos = core.get_global_notes()
+        nodes = core_state.get("cinematic_nodes", {})
+        timeline_mode = core_state.get("timeline_mode", "PRESENT")
+        memory_history = core.get_memory_prompt()
+        
+        # Timeline override logic
+        timeline_prompt = ""
+        if timeline_mode == "PAST":
+            timeline_prompt = "\n[타임라인 가이드]: 현재 시점이 아닌 캐릭터의 **과거 회기(Flashback)** 장면을 생성하십시오. 세피아 톤의 색채와 과거의 파편을 강조하십시오."
+        elif timeline_mode == "FUTURE":
+            timeline_prompt = "\n[타임라인 가이드]: 아직 일어나지 않은 **미래의 편린(Vision)** 또는 환상 장면을 생성하십시오. 몽환적이고 비현실적인 분위기를 강조하십시오."
+
+        prompt = f"""
+{MASTER_PROMPT}
+
+[현재 카드 테이블 상상]
+- 장소: {core_state['place']}
+- 주연: {lead_text}
+- 조연: {core_state['support_characters']}
+- 소품: {core_state['active_props']}
+
+[타임라인 시점]: {timeline_mode}{timeline_prompt}
+
+[시네마틱 연출 설정]
+- 시간/조명: {nodes.get('time')}
+- 카메라/구도: {nodes.get('cinematic')}
+- 내면/분위기: {nodes.get('mood')}
+- 오감/속성: {nodes.get('sense')} / {nodes.get('element')}
+- 인물관계: {nodes.get('relationship')}
+- 의상/음식: {nodes.get('lifestyle')}
+- 음향 cues: {nodes.get('audio')} / {nodes.get('music')}
+- 추상적 주제: {nodes.get('concept')}
+- 서사적 스케일: {nodes.get('universal')}
+
+[씬 메타데이터]
+- 목표 시간: {duration}분
+- 전개 가이드: {duration_guide}
+
+[특별 지시]
+- 신의 마지막에는 반드시 **[BGM/OST Recommendation]** 섹션을 추가하여, 이 장면의 정서에 가장 어울리는 가상의 음악 제목이나 스타일을 제안하십시오.
+- 그 뒤에 반드시 **[Director's Review & Diagnosis]** 섹션을 추가하십시오:
+    1. **별점 (⭐)**: 1~5개 사이로 장면의 완성도를 평가하십시오.
+    2. **평론 (Critique)**: 선생님의 관점에서 장면의 미학적 성취를 한 문장으로 평하십시오.
+    3. **진단 및 처방 (Diagnosis)**: 의사의 관점에서 현재 서사의 건강(긴장도, 개연성 등)을 진단하고 다음을 위한 처방을 내리십시오.
+- 마지막에 반드시 **[Narrative Memory]** 섹션을 추가하여, 이 장면에서 일어난 가장 핵심적인 사건을 딱 한 문장(한국어)으로 요약하십시오. (예: "주인공이 낡은 일기장에서 비밀 지도를 발견함")
+
+[핵심 서사 기억 (Narrative Memory History)]
+{memory_history}
+
+[창작 대원칙 (반드시 준수)]
+{chr(10).join(memos) if memos else "- 없음 (자유롭게 전개)"}
+
+[이전 줄거리 요약]
+{history_text}
+
+[현재 상황 및 유저 지시]
+{user_input}
+        """.strip()
+        
+        line = ollama_client.ollama_generate(prompt)
+        
+        if "[Ollama" in line: # Handle error
+             line = f"[{emotion_text}] {core_state['place']}의 차가운 정적 속에서 이야기가 멈춥니다. (AI 연결 실패)"
+
+    # 4. Updates & Filters
+    core._update_timing_state(line, scene_no)
+    core._update_reaction_intensity()
+    
+    # --- Phase 1: Impact & Memory Logging ---
+    impact = core.calculate_scene_impact(line, duration)
+    
+    # Extract Narrative Memory from AI output
+    event_summary = "중요 사건이 식별되지 않음"
+    if "[Narrative Memory]" in line:
+        try:
+            event_summary = line.split("[Narrative Memory]")[-1].strip().split("\n")[0].replace(":", "").strip()
+        except:
+            pass
+    elif test_mode:
+        event_summary = f"테스트 장면 {scene_no} 생성됨"
+        
+    core.add_narrative_memory(event_summary, impact)
+    
+    tag = core.get_current_state_tag()
+    line = _apply_foreshadow_recovery(line, scene_no)
+    line = _apply_peaceful_atmosphere(line, tag)
+    line = _apply_void_atmosphere(line, effective_emotion)
+    return line
+
+def reset_engine():
+    core.reset_core()
+
+# --- Phase 2: Dynamic Weights & High-level Orchestration ---
+def resolve_choice_weights():
+    weights = {"suspicion": 1.0, "pressure": 1.0, "echo": 1.0}
+    space_obj = cards.get_space(core._CURRENT_PLACE)
+    if space_obj:
+        for key, mult in space_obj.weight_modifiers.items():
+            if key == "대화": weights["pressure"] *= mult
+            if key == "침묵": weights["echo"] *= mult
+            if key == "관찰": weights["suspicion"] *= mult
+    return weights
+
+def play_turn(place=None, lead=None, support=None, prop=None, card=None, user_input="", scene_no=1, duration=5, test_mode=False) -> dict:
+    """
+    Main entry point for a cinematic turn.
+    Handles Place(Table), Character(Lead/Support), and Prop cards.
+    """
+    if place:
+        space_obj = cards.get_space(place)
+        if space_obj:
+            core.reset_core()
+            core._CURRENT_PLACE = place
+            core.update_timing(**space_obj.base_impact)
+    
+    if lead:
+        # lead can be a name (Preset) or a dict (Custom from Wizard)
+        if isinstance(lead, str):
+            char_obj = cards.get_character(lead)
+            if char_obj: 
+                core._LEAD_CHARACTER = char_obj.to_dict()
+                core.update_timing(**char_obj.base_impact)
+        else:
+            core._LEAD_CHARACTER = lead
+            if "base_impact" in lead: core.update_timing(**lead["base_impact"])
+
+    if support:
+        if isinstance(support, str):
+            char_obj = cards.get_character(support)
+            if char_obj: core._SUPPORT_CHARACTERS.append(char_obj.to_dict())
+        else:
+            core._SUPPORT_CHARACTERS.append(support)
+
+    if prop:
+        if isinstance(prop, str):
+            prop_obj = cards.get_prop(prop)
+            if prop_obj: core._ACTIVE_PROPS.append({"name": prop_obj.name, "description": prop_obj.description})
+        else:
+            core._ACTIVE_PROPS.append(prop)
+
+    card_result = None
+    if card:
+        card_obj = cards.get_card(card)
+        if not card_obj:
+            return {"error": f"'{card}' 카드는 존재하지 않습니다."}
+        
+        changes = {}
+        for key in ["suspicion", "pressure", "echo"]:
+            total_mod = card_obj.impact.get(key, 0)
+            # Add Lead impact if exists
+            if core._LEAD_CHARACTER and "base_impact" in core._LEAD_CHARACTER:
+                total_mod += core._LEAD_CHARACTER["base_impact"].get(key, 0)
+                
+            if total_mod != 0:
+                old = core._TIMING_STATE[key]
+                core.update_timing(**{key: total_mod})
+                changes[key] = core._TIMING_STATE[key] - old
+        card_result = {"card": card, "changes": changes}
+
+    weights = resolve_choice_weights()
+    scene_text = generate_next_scene(user_input, scene_no, duration=duration, test_mode=test_mode)
+    
+    # Revert Timeline Mode after generation
+    core.set_timeline_mode("PRESENT")
+
+    return {
+        "state": core.get_state(),
+        "card_used": card_result["card"] if card_result else "없음",
+        "changes": card_result["changes"] if card_result else {},
+        "state_tag": core.get_current_state_tag(),
+        "scene_text": scene_text,
+        "weights": weights,
+        "duration": duration,
+        "impact_score": core._CUMULATIVE_IMPACT,
+        "impact": core._LAST_SCENE_IMPACT,
+        "event_summary": core._LAST_EVENT_SUMMARY
+    }
+
+
+# --- Legacy Compatibility Wrappers ---
+def apply_card(card_name: str):
+    return play_turn(card=card_name)
+
+def set_place(place_name: str):
+    return play_turn(place=place_name)
+
+def set_character(char_name: str):
+    return play_turn(lead=char_name)

@@ -1,0 +1,346 @@
+import random
+import os
+from collections import deque
+
+# --- Global State (Core Engine) ---
+_TIMING_STATE = {"suspicion": 0, "pressure": 0, "echo": 0}
+_CURRENT_EMOTION = 0
+_MEMORY_SHORT = []
+_MEMORY_LONG = []
+_SYMBOLS = []
+_FORESHADOW_QUEUE = []
+_REACTION_STATE = {"intensity": 0}
+_TOTAL_SCENES = 0
+
+# --- Phase 1: Stability (Permanence) ---
+_CUMULATIVE_IMPACT = 0
+_NARRATIVE_MEMORY = [] # List of key event summaries
+_LAST_SCENE_IMPACT = 0
+_LAST_EVENT_SUMMARY = ""
+
+_NARRATIVE_TRIGGER = {}
+
+# --- Global Wisdom Board (Creative Directions) ---
+_GLOBAL_NOTES = []
+
+# --- Timeline Context (Tarot Chronos) ---
+_TIMELINE_MODE = "PRESENT" # "PRESENT", "PAST", "FUTURE"
+
+# --- Cinematic Card Table ---
+_LEAD_CHARACTER = None # Detailed Character Object (Dict)
+_SUPPORT_CHARACTERS = [] # List of Detailed Character Objects
+_CURRENT_PLACE = "카페"
+_ACTIVE_PROPS = [] # List of Prop Objects
+
+# --- Cinematic Directing Nodes ---
+_ACTIVE_CINEMATIC_NODES = {
+    "time": "낮",
+    "cinematic": "기본 구도",
+    "mood": "평범",
+    "sense": "균형",
+    "element": "없음",
+    "relationship": "일반",
+    "lifestyle": "일상복",
+    "audio": "자연음",
+    "music": "적막"
+}
+
+# --- Infinite Idea Bank (Creative Trope Library) ---
+_IDEA_BANK = [
+    "어긋난 기억", "뒤늦은 후회", "낯선 그림자", "공백의 의미", "어긋난 타이밍", "반복되는 시간", 
+    "선명해지는 진실", "숨겨진 공간", "낯선 집중", "기억의 조각", "비어있는 자리", "뒤바뀐 인연",
+    "예상치 못한 배신", "운명적인 재회", "침묵의 대가", "빗속의 탈출", "마지막 거래", "잃어버린 이름",
+    "거짓된 믿음", "새벽의 습격", "서늘한 예감", "부서진 약속", "가려진 얼굴", "금지된 호기심",
+    "우연한 목격", "계획된 우연", "심연의 부름", "흩어진 단서", "차가운 열정", "고요한 폭풍",
+    "어제의 그림자", "내일의 공포", "현재의 거울", "뒤틀린 우주", "치명적 비밀", "화려한 고독"
+]
+
+def get_state():
+    state = {
+        "timing": _TIMING_STATE,
+        "emotion": _CURRENT_EMOTION,
+        "trigger": _NARRATIVE_TRIGGER,
+        "place": _CURRENT_PLACE,
+        "lead_character": _LEAD_CHARACTER,
+        "support_characters": _SUPPORT_CHARACTERS,
+        "active_props": _ACTIVE_PROPS,
+        "reaction": _REACTION_STATE,
+        "total_scenes": _TOTAL_SCENES,
+        "memos": _GLOBAL_NOTES,
+        "cinematic_nodes": _ACTIVE_CINEMATIC_NODES,
+        "timeline_mode": _TIMELINE_MODE,
+        "cumulative_impact": _CUMULATIVE_IMPACT,
+        "narrative_memory": _NARRATIVE_MEMORY
+    }
+    return state
+
+def set_timeline_mode(mode: str):
+    """Sets the current timeline mode (PRESENT, PAST, FUTURE)."""
+    global _TIMELINE_MODE
+    if mode.upper() in ["PRESENT", "PAST", "FUTURE"]:
+        _TIMELINE_MODE = mode.upper()
+
+def set_cinematic_node(category: str, value: str):
+    """Sets a specific cinematic directing node (time, cinematic, mood, etc.)."""
+    global _ACTIVE_CINEMATIC_NODES
+    if category in _ACTIVE_CINEMATIC_NODES:
+        _ACTIVE_CINEMATIC_NODES[category] = value
+
+def get_total_duration(scenes):
+    """Calculates total story runtime in minutes."""
+    total = 0
+    for s in scenes:
+        total += s.get("metadata", {}).get("duration", 0)
+    return total
+
+def get_random_ideas(count=3):
+    """Picks random seeds from the Idea Bank."""
+    return random.sample(_IDEA_BANK, min(count, len(_IDEA_BANK)))
+
+def get_recommended_cards(count=5):
+    """Returns a list of 5 diverse card recommendations with AI reasoning."""
+    from . import card_engine as cards
+    all_presets = cards.get_all_presets()
+    recommendations = []
+    
+    # Pick 5 random categories and a random card from each
+    categories = list(all_presets.keys())
+    random.shuffle(categories)
+    
+    for cat in categories[:count]:
+        card_name = random.choice(all_presets[cat])
+        
+        # Simple AI Reasoning Logic (Doctor Persona)
+        reason = "이야기의 확장을 위해 추천합니다." # Default
+        if _TIMING_STATE["pressure"] >= 5:
+            reason = "긴장감이 높으므로 전환이 필요할 때입니다."
+        elif _TIMING_STATE["echo"] >= 3:
+            reason = "현학적인 분위기를 더하기에 적합합니다."
+        elif _TIMING_STATE["suspicion"] >= 3:
+            reason = "의구심을 해결하거나 더 키울 수 있는 장치입니다."
+        
+        # Categorical flavor text (Teacher Persona)
+        if cat == "concept": reason = "작품의 철학적 깊이를 더해줄 것입니다."
+        elif cat == "universal": reason = "서사의 스케일을 범우주적으로 확장합니다."
+        elif cat == "lifestyle": reason = "장면의 미학적인 디테일을 완성합니다."
+        elif cat == "chronos": reason = "시간의 조각을 통해 진실에 다가가 보세요."
+
+        recommendations.append({
+            "category": cat,
+            "name": card_name,
+            "reason": reason
+        })
+        
+    return recommendations
+
+def add_global_note(text: str):
+    global _GLOBAL_NOTES
+    if text.strip() and text not in _GLOBAL_NOTES:
+        _GLOBAL_NOTES.append(text.strip())
+
+def get_global_notes():
+    return _GLOBAL_NOTES
+
+def get_history():
+    """Reads scene history from scenes.json."""
+    import json
+    if os.path.exists("scenes.json"):
+        try:
+            with open("scenes.json", "r", encoding="utf-8") as f:
+                return json.load(f)
+        except:
+            return []
+    return []
+
+def build_story_history(history):
+    """Formats scene history for the master prompt."""
+    if not history: return "없음"
+    lines = []
+    for s in history[-5:]: # Last 5 scenes for context
+        lines.append(f"Seq {s.get('sequence', '?')}: {s.get('scene_text', '')[:100]}...")
+    return "\n".join(lines)
+
+def set_emotion(level: int):
+    global _CURRENT_EMOTION
+    _CURRENT_EMOTION = max(0, min(5, level))
+
+def update_timing(suspicion=0, pressure=0, echo=0):
+    global _TIMING_STATE
+    _TIMING_STATE["suspicion"] = max(0, min(10, _TIMING_STATE["suspicion"] + suspicion))
+    _TIMING_STATE["pressure"] = max(0, min(10, _TIMING_STATE["pressure"] + pressure))
+    _TIMING_STATE["echo"] = max(0, min(10, _TIMING_STATE["echo"] + echo))
+
+def _is_void_moment():
+    return _TIMING_STATE["pressure"] >= 5 and _TIMING_STATE["echo"] >= 3
+
+def get_current_state_tag() -> str:
+    if _is_void_moment(): return "VOID"
+    if _CURRENT_EMOTION >= 3 and _TIMING_STATE["pressure"] == 0: return "STILLNESS"
+    if _CURRENT_EMOTION >= 3 or _TIMING_STATE["pressure"] >= 3: return "TENSION"
+    return "NORMAL"
+
+def reset_core():
+    global _TIMING_STATE, _CURRENT_EMOTION, _MEMORY_SHORT, _MEMORY_LONG, _SYMBOLS, _FORESHADOW_QUEUE, _REACTION_STATE, _NARRATIVE_TRIGGER, _LEAD_CHARACTER, _SUPPORT_CHARACTERS, _CURRENT_PLACE, _ACTIVE_PROPS, _TOTAL_SCENES, _GLOBAL_NOTES, _ACTIVE_CINEMATIC_NODES, _CUMULATIVE_IMPACT, _NARRATIVE_MEMORY
+    _TIMING_STATE = {"suspicion": 0, "pressure": 0, "echo": 0}
+    _CURRENT_EMOTION = 0
+    _MEMORY_SHORT = []
+    _MEMORY_LONG = []
+    _SYMBOLS = []
+    _FORESHADOW_QUEUE = []
+    _REACTION_STATE = {"intensity": 0}
+    _NARRATIVE_TRIGGER = {}
+    _LEAD_CHARACTER = None
+    _SUPPORT_CHARACTERS = []
+    _ACTIVE_PROPS = []
+    _CURRENT_PLACE = "카페"
+    _TOTAL_SCENES = 0
+    _GLOBAL_NOTES = []
+    _ACTIVE_CINEMATIC_NODES = {
+        "time": "낮",
+        "cinematic": "기본 구도",
+        "mood": "평범",
+        "sense": "균형",
+        "element": "없음",
+        "relationship": "일반",
+        "lifestyle": "일상복",
+        "audio": "자연음",
+        "music": "적막"
+    }
+    _TIMELINE_MODE = "PRESENT"
+    _CUMULATIVE_IMPACT = 0
+    _NARRATIVE_MEMORY = []
+    _LAST_SCENE_IMPACT = 0
+    _LAST_EVENT_SUMMARY = ""
+
+def update_lead_character(updates: dict):
+    """Updates the lead character's attributes (Level, Skills, etc.)"""
+    global _LEAD_CHARACTER
+    if _LEAD_CHARACTER:
+        for key, val in updates.items():
+            if key == "skill" and val not in _LEAD_CHARACTER.get("skill", ""):
+                _LEAD_CHARACTER["skill"] = f"{_LEAD_CHARACTER.get('skill', '')}, {val}".strip(", ")
+            else:
+                _LEAD_CHARACTER[key] = val
+
+def analyze_project_health(scenes):
+    """프로젝트 전체의 서사적 건강 상태를 진단 (Doctor Persona)"""
+    if not scenes:
+        return {"score": 0, "status": "데이터 없음", "report": "환자가 아직 내원하지 않았습니다."}
+    
+    total = len(scenes)
+    suspicion_avg = sum(s.get("state", {}).get("timing", {}).get("suspicion", 0) for s in scenes) / total
+    pressure_avg = sum(s.get("state", {}).get("timing", {}).get("pressure", 0) for s in scenes) / total
+    
+    # Diagnosis Logic
+    status = "안정"
+    report = "서사의 맥박이 일정하며 건강한 상태입니다."
+    
+    impact_score = get_state()["cumulative_impact"]
+    
+    if pressure_avg > 7:
+        status = "고혈압 (과도한 긴장)"
+        report = "환자의 긴장도가 위험 수준입니다. 이완(Release) 장면의 처방이 시급합니다."
+    elif pressure_avg < 2 and total > 5:
+        status = "저혈압 (긴장 부족)"
+        report = "서사가 늘어지고 있습니다. 충격적인 사건이나 갈등의 주입이 필요합니다."
+    
+    if impact_score > 50:
+        report += " 또한 서사의 임팩트가 충분히 쌓여 묵직한 힘을 가지고 있습니다."
+    
+    if total >= 20:
+        status = "태원 준비 (완성 단계)"
+        report = "서사가 충분히 성숙했습니다. 이제 결말을 향한 태원을 준비하셔도 좋습니다."
+
+    score = max(0, min(100, 100 - (abs(5 - pressure_avg) * 10) + min(20, impact_score/2)))
+    
+    return {
+        "score": int(score),
+        "status": status,
+        "report": report
+    }
+
+def _update_timing_state(scene_text: str, scene_no: int):
+    global _TIMING_STATE
+    text = scene_text or ""
+    suspicious_words = ["이상", "낯설", "어긋", "빈칸", "흔적", "기척", "불편", "미세", "달라"]
+    pressure_words = ["멈춘", "늦게", "점점", "더", "계속", "갑자기", "무겁", "선명"]
+    echo_words = ["다시", "반복", "또", "같은", "겹쳐", "이어", "남아", "떠오"]
+    
+    if any(w in text for w in suspicious_words): _TIMING_STATE["suspicion"] += 1
+    if any(w in text for w in pressure_words): _TIMING_STATE["pressure"] += 1
+    if any(w in text for w in echo_words): _TIMING_STATE["echo"] += 1
+
+    release_words = ["안심", "고요", "햇살", "조용", "평온", "천천히", "가라앉", "쉬어"]
+    if any(w in text for w in release_words):
+        _TIMING_STATE["pressure"] = max(0, _TIMING_STATE["pressure"] - 2)
+        _TIMING_STATE["echo"] = max(0, _TIMING_STATE["echo"] - 1)
+
+    for k in _TIMING_STATE: _TIMING_STATE[k] = min(_TIMING_STATE[k], 10)
+    
+    global _TOTAL_SCENES
+    _TOTAL_SCENES += 1
+
+def _update_reaction_intensity():
+    global _REACTION_STATE
+    score = _TIMING_STATE["suspicion"] * 2 + _TIMING_STATE["pressure"] + _TIMING_STATE["echo"]
+    _REACTION_STATE["intensity"] = min(score, 10)
+
+# --- Phase 1 Additions ---
+def calculate_scene_impact(scene_text: str, duration: int):
+    """장면의 텍스트와 전개 시간을 기반으로 임팩트 점수를 계산."""
+    global _CUMULATIVE_IMPACT, _LAST_SCENE_IMPACT
+    
+    # 1. 텍스트 길이 및 밀도 기반 베이스
+    base = min(5, len(scene_text or "") / 200)
+    
+    # 2. 전개 시간 가중치
+    time_mult = 1.0
+    if duration >= 15: time_mult = 1.5
+    elif duration <= 3: time_mult = 0.8
+    
+    # 3. 타이밍 상태(긴장감) 반영
+    state_boost = (_TIMING_STATE["pressure"] + _TIMING_STATE["suspicion"]) / 4
+    
+    scene_impact = int((base + state_boost) * time_mult)
+    if scene_text and scene_impact == 0: scene_impact = 1
+    
+    _LAST_SCENE_IMPACT = scene_impact
+    _CUMULATIVE_IMPACT += scene_impact
+    return scene_impact
+
+def add_narrative_memory(event_text: str, impact: int):
+    """중요 서사 이벤트를 기록."""
+    global _NARRATIVE_MEMORY, _TOTAL_SCENES, _LAST_EVENT_SUMMARY
+    _LAST_EVENT_SUMMARY = event_text
+    _NARRATIVE_MEMORY.append({
+        "scene": _TOTAL_SCENES, # Already incremented in _update_timing_state
+        "event": event_text,
+        "impact": impact
+    })
+
+def get_memory_prompt():
+    """AI에게 전달할 기억 로그 요약을 생성."""
+    if not _NARRATIVE_MEMORY: return "기록된 주요 사건 없음"
+    lines = []
+    for m in _NARRATIVE_MEMORY[-10:]: # 최근 10개 주요 사건
+        lines.append(f"- [Scene {m['scene']}] {m['event']} (임팩트: {m['impact']})")
+    return "\n".join(lines)
+
+def sync_from_history(scenes):
+    """기존 scenes 리스트로부터 엔진 상태(Total Scenes, Impact, Memory)를 복구함."""
+    global _TOTAL_SCENES, _CUMULATIVE_IMPACT, _NARRATIVE_MEMORY
+    reset_core()
+    _TOTAL_SCENES = len(scenes)
+    _NARRATIVE_MEMORY = []
+    _CUMULATIVE_IMPACT = 0
+    
+    for s in scenes:
+        meta = s.get("metadata", {})
+        impact = meta.get("impact", 1) # 기본값 1
+        event = meta.get("event_summary", "과거 기록된 사건")
+        _CUMULATIVE_IMPACT += impact
+        _NARRATIVE_MEMORY.append({
+            "scene": s.get("scene_number", 0),
+            "event": event,
+            "impact": impact
+        })
