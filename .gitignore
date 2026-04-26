@@ -1,11 +1,32 @@
-# Backups and Large Files
-backups/
-*.tar.gz
-*.zip
+# [Python]
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+.env
+
+# [Large Binary Files] - GitHub 업로드 오류 방지
 *.pptx
 *.zip
-*.json
-.git/
-node_modules/
-__pycache__/
+*.tar.gz
+*.7z
+
+# [Logs & Temporary Files]
+*.log
+extracted_pptx/
+myhub_migration.log
+
+# [Project Specific Folders]
+backups/
+휴지통_폐기장/
+
+# [OS Junk]
 .DS_Store
+Thumbs.db
+desktop.ini
+
+# [Editor]
+.vscode/
+.idea/
