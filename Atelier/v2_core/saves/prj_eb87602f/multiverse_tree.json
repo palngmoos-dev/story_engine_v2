@@ -1,0 +1,29 @@
+{
+  "current_branch_id": "main",
+  "branches": {
+    "main": {
+      "name": "Main Timeline",
+      "created_at": "2026-04-10T23:02:26.125420",
+      "snapshots": [
+        "snap_fb11d235",
+        "snap_5b27399c",
+        "snap_39a640a7",
+        "snap_84fb093d",
+        "snap_220d23ef",
+        "snap_57b8fd63",
+        "snap_e238cff7",
+        "snap_c1260755",
+        "snap_6703c50f",
+        "snap_0848ac75",
+        "snap_261a4f0a",
+        "snap_eb19018a",
+        "snap_095e5195",
+        "snap_45cdc695",
+        "snap_106caabd",
+        "snap_faa1ae5d"
+      ],
+      "parent_snapshot_id": null,
+      "narrative_log": []
+    }
+  }
+}

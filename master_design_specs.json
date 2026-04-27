@@ -1,0 +1,786 @@
+{
+    "layouts": [
+        {
+            "name": "12_제목 및 내용",
+            "placeholders": [
+                {
+                    "type": "BODY (2)",
+                    "idx": 10,
+                    "left": 648002,
+                    "top": 511200,
+                    "width": 2880000,
+                    "height": 6505200
+                },
+                {
+                    "type": "BODY (2)",
+                    "idx": 11,
+                    "left": 576000,
+                    "top": 14400,
+                    "width": 8686800,
+                    "height": 435600
+                },
+                {
+                    "type": "BODY (2)",
+                    "idx": 18,
+                    "left": 3600003,
+                    "top": 511200,
+                    "width": 6775200,
+                    "height": 6505200
+                },
+                {
+                    "type": "BODY (2)",
+                    "idx": 17,
+                    "left": 9262800,
+                    "top": 14400,
+                    "width": 1177200,
+                    "height": 435600
+                }
+            ]
+        },
+        {
+            "name": "7_제목 및 내용",
+            "placeholders": [
+                {
+                    "type": "BODY (2)",
+                    "idx": 10,
+                    "left": 648001,
+                    "top": 496800,
+                    "width": 6768000,
+                    "height": 6552000
+                },
+                {
+                    "type": "PICTURE (18)",
+                    "idx": 12,
+                    "left": 7488000,
+                    "top": 496800,
+                    "width": 2880000,
+                    "height": 3221999
+                },
+                {
+                    "type": "PICTURE (18)",
+                    "idx": 13,
+                    "left": 7488000,
+                    "top": 3819600,
+                    "width": 2880000,
+                    "height": 3222000
+                },
+                {
+                    "type": "BODY (2)",
+                    "idx": 18,
+                    "left": 575999,
+                    "top": 14400,
+                    "width": 8685986,
+                    "height": 435600
+                },
+                {
+                    "type": "BODY (2)",
+                    "idx": 19,
+                    "left": 9261984,
+                    "top": 14747,
+                    "width": 1177415,
+                    "height": 434097
+                }
+            ]
+        },
+        {
+            "name": "17_제목 및 내용",
+            "placeholders": [
+                {
+                    "type": "BODY (2)",
+                    "idx": 11,
+                    "left": 576000,
+                    "top": 14400,
+                    "width": 8686800,
+                    "height": 435600
+                },
+                {
+                    "type": "BODY (2)",
+                    "idx": 19,
+                    "left": 647699,
+                    "top": 3787199,
+                    "width": 9720000,
+                    "height": 3261600
+                },
+                {
+                    "type": "BODY (2)",
+                    "idx": 17,
+                    "left": 9262800,
+                    "top": 14400,
+                    "width": 1177200,
+                    "height": 435600
+                },
+                {
+                    "type": "PICTURE (18)",
+                    "idx": 20,
+                    "left": 647700,
+                    "top": 493548,
+                    "width": 4827600,
+                    "height": 3210851
+                },
+                {
+                    "type": "PICTURE (18)",
+                    "idx": 21,
+                    "left": 5547600,
+                    "top": 493548,
+                    "width": 4827600,
+                    "height": 3210852
+                }
+            ]
+        },
+        {
+            "name": "8_제목 및 내용",
+            "placeholders": [
+                {
+                    "type": "BODY (2)",
+                    "idx": 10,
+                    "left": 648002,
+                    "top": 496800,
+                    "width": 9720000,
+                    "height": 2880000
+                },
+                {
+                    "type": "BODY (2)",
+                    "idx": 11,
+                    "left": 576000,
+                    "top": 14400,
+                    "width": 8686800,
+                    "height": 435600
+                },
+                {
+                    "type": "BODY (2)",
+                    "idx": 17,
+                    "left": 9262800,
+                    "top": 14400,
+                    "width": 1177200,
+                    "height": 435600
+                },
+                {
+                    "type": "BODY (2)",
+                    "idx": 18,
+                    "left": 647962,
+                    "top": 3438000,
+                    "width": 9720000,
+                    "height": 3585600
+                }
+            ]
+        },
+        {
+            "name": "6_제목 및 내용",
+            "placeholders": [
+                {
+                    "type": "BODY (2)",
+                    "idx": 11,
+                    "left": 576000,
+                    "top": 14400,
+                    "width": 8686800,
+                    "height": 435600
+                },
+                {
+                    "type": "BODY (2)",
+                    "idx": 17,
+                    "left": 9262800,
+                    "top": 14400,
+                    "width": 1177200,
+                    "height": 435600
+                },
+                {
+                    "type": "PICTURE (18)",
+                    "idx": 21,
+                    "left": 647700,
+                    "top": 526296,
+                    "width": 4824413,
+                    "height": 3207600
+                },
+                {
+                    "type": "PICTURE (18)",
+                    "idx": 22,
+                    "left": 5543549,
+                    "top": 526296,
+                    "width": 4824413,
+                    "height": 3207600
+                },
+                {
+                    "type": "PICTURE (18)",
+                    "idx": 23,
+                    "left": 647700,
+                    "top": 3816348,
+                    "width": 4824413,
+                    "height": 3207600
+                },
+                {
+                    "type": "PICTURE (18)",
+                    "idx": 24,
+                    "left": 5543549,
+                    "top": 3816348,
+                    "width": 4824413,
+                    "height": 3207600
+                }
+            ]
+        },
+        {
+            "name": "11_제목 및 내용",
+            "placeholders": [
+                {
+                    "type": "BODY (2)",
+                    "idx": 18,
+                    "left": 575999,
+                    "top": 14748,
+                    "width": 8685986,
+                    "height": 435600
+                },
+                {
+                    "type": "BODY (2)",
+                    "idx": 19,
+                    "left": 9261984,
+                    "top": 14747,
+                    "width": 1177415,
+                    "height": 434097
+                },
+                {
+                    "type": "BODY (2)",
+                    "idx": 10,
+                    "left": 648003,
+                    "top": 496800,
+                    "width": 4654800,
+                    "height": 3222414
+                },
+                {
+                    "type": "PICTURE (18)",
+                    "idx": 12,
+                    "left": 7920000,
+                    "top": 496800,
+                    "width": 2448000,
+                    "height": 3222000
+                },
+                {
+                    "type": "PICTURE (18)",
+                    "idx": 15,
+                    "left": 5385600,
+                    "top": 496800,
+                    "width": 2448000,
+                    "height": 3222000
+                },
+                {
+                    "type": "BODY (2)",
+                    "idx": 23,
+                    "left": 647699,
+                    "top": 3818006,
+                    "width": 4654800,
+                    "height": 3222000
+                },
+                {
+                    "type": "PICTURE (18)",
+                    "idx": 24,
+                    "left": 5385600,
+                    "top": 3819948,
+                    "width": 2448000,
+                    "height": 3222000
+                },
+                {
+                    "type": "PICTURE (18)",
+                    "idx": 25,
+                    "left": 7920000,
+                    "top": 3819948,
+                    "width": 2448000,
+                    "height": 3222000
+                }
+            ]
+        },
+        {
+            "name": "5_제목 및 내용",
+            "placeholders": [
+                {
+                    "type": "BODY (2)",
+                    "idx": 10,
+                    "left": 648000,
+                    "top": 496800,
+                    "width": 4788000,
+                    "height": 6519600
+                },
+                {
+                    "type": "BODY (2)",
+                    "idx": 11,
+                    "left": 576000,
+                    "top": 14400,
+                    "width": 8686800,
+                    "height": 435600
+                },
+                {
+                    "type": "BODY (2)",
+                    "idx": 17,
+                    "left": 9262800,
+                    "top": 14400,
+                    "width": 1177200,
+                    "height": 435600
+                },
+                {
+                    "type": "BODY (2)",
+                    "idx": 18,
+                    "left": 5579401,
+                    "top": 496800,
+                    "width": 4788000,
+                    "height": 6519600
+                }
+            ]
+        },
+        {
+            "name": "13_제목 및 내용",
+            "placeholders": [
+                {
+                    "type": "BODY (2)",
+                    "idx": 10,
+                    "left": 648000,
+                    "top": 496800,
+                    "width": 9720000,
+                    "height": 6519600
+                },
+                {
+                    "type": "BODY (2)",
+                    "idx": 18,
+                    "left": 575999,
+                    "top": 14749,
+                    "width": 8685986,
+                    "height": 435600
+                },
+                {
+                    "type": "BODY (2)",
+                    "idx": 19,
+                    "left": 9261984,
+                    "top": 14747,
+                    "width": 1177415,
+                    "height": 434097
+                }
+            ]
+        },
+        {
+            "name": "4_사용자 지정 레이아웃",
+            "placeholders": [
+                {
+                    "type": "BODY (2)",
+                    "idx": 10,
+                    "left": 781665,
+                    "top": 75624,
+                    "width": 9438967,
+                    "height": 489132
+                }
+            ]
+        },
+        {
+            "name": "9_사용자 지정 레이아웃",
+            "placeholders": [
+                {
+                    "type": "BODY (2)",
+                    "idx": 10,
+                    "left": 647962,
+                    "top": 464401,
+                    "width": 9720000,
+                    "height": 6484213
+                },
+                {
+                    "type": "BODY (2)",
+                    "idx": 18,
+                    "left": 575999,
+                    "top": 14748,
+                    "width": 8685986,
+                    "height": 435600
+                },
+                {
+                    "type": "BODY (2)",
+                    "idx": 19,
+                    "left": 9261984,
+                    "top": 14747,
+                    "width": 1177415,
+                    "height": 434097
+                }
+            ]
+        },
+        {
+            "name": "6_사용자 지정 레이아웃",
+            "placeholders": [
+                {
+                    "type": "BODY (2)",
+                    "idx": 10,
+                    "left": 647962,
+                    "top": 464400,
+                    "width": 9720000,
+                    "height": 6909321
+                },
+                {
+                    "type": "BODY (2)",
+                    "idx": 18,
+                    "left": 575999,
+                    "top": 14749,
+                    "width": 8685986,
+                    "height": 434098
+                },
+                {
+                    "type": "BODY (2)",
+                    "idx": 19,
+                    "left": 9261984,
+                    "top": 14747,
+                    "width": 1177415,
+                    "height": 434097
+                }
+            ]
+        },
+        {
+            "name": "3_사용자 지정 레이아웃",
+            "placeholders": [
+                {
+                    "type": "BODY (2)",
+                    "idx": 13,
+                    "left": 5579440,
+                    "top": 464400,
+                    "width": 4788522,
+                    "height": 6909320
+                },
+                {
+                    "type": "BODY (2)",
+                    "idx": 20,
+                    "left": 647962,
+                    "top": 464400,
+                    "width": 4788000,
+                    "height": 6909319
+                },
+                {
+                    "type": "BODY (2)",
+                    "idx": 18,
+                    "left": 575999,
+                    "top": 14749,
+                    "width": 8685986,
+                    "height": 434098
+                },
+                {
+                    "type": "BODY (2)",
+                    "idx": 19,
+                    "left": 9261984,
+                    "top": 14747,
+                    "width": 1177415,
+                    "height": 434097
+                }
+            ]
+        },
+        {
+            "name": "8_사용자 지정 레이아웃",
+            "placeholders": [
+                {
+                    "type": "PICTURE (18)",
+                    "idx": 15,
+                    "left": 7200000,
+                    "top": 3952800,
+                    "width": 3168000,
+                    "height": 3421153
+                },
+                {
+                    "type": "BODY (2)",
+                    "idx": 20,
+                    "left": 647962,
+                    "top": 464399,
+                    "width": 6480000,
+                    "height": 3420000
+                },
+                {
+                    "type": "BODY (2)",
+                    "idx": 19,
+                    "left": 575999,
+                    "top": 14749,
+                    "width": 8685986,
+                    "height": 434098
+                },
+                {
+                    "type": "BODY (2)",
+                    "idx": 21,
+                    "left": 9261984,
+                    "top": 14747,
+                    "width": 1177415,
+                    "height": 434097
+                },
+                {
+                    "type": "BODY (2)",
+                    "idx": 22,
+                    "left": 647962,
+                    "top": 3952800,
+                    "width": 6480000,
+                    "height": 3420000
+                },
+                {
+                    "type": "PICTURE (18)",
+                    "idx": 23,
+                    "left": 7199700,
+                    "top": 479148,
+                    "width": 3168000,
+                    "height": 3421152
+                }
+            ]
+        },
+        {
+            "name": "7_사용자 지정 레이아웃",
+            "placeholders": [
+                {
+                    "type": "PICTURE (18)",
+                    "idx": 14,
+                    "left": 7487962,
+                    "top": 493893,
+                    "width": 2880000,
+                    "height": 3421152
+                },
+                {
+                    "type": "PICTURE (18)",
+                    "idx": 15,
+                    "left": 7487962,
+                    "top": 3952568,
+                    "width": 2880000,
+                    "height": 3421153
+                },
+                {
+                    "type": "BODY (2)",
+                    "idx": 20,
+                    "left": 647962,
+                    "top": 464399,
+                    "width": 6767998,
+                    "height": 6909322
+                },
+                {
+                    "type": "BODY (2)",
+                    "idx": 19,
+                    "left": 575999,
+                    "top": 14749,
+                    "width": 8685986,
+                    "height": 434098
+                },
+                {
+                    "type": "BODY (2)",
+                    "idx": 21,
+                    "left": 9261984,
+                    "top": 14747,
+                    "width": 1177415,
+                    "height": 434097
+                }
+            ]
+        },
+        {
+            "name": "10_제목 및 내용",
+            "placeholders": [
+                {
+                    "type": "BODY (2)",
+                    "idx": 10,
+                    "left": 648003,
+                    "top": 464815,
+                    "width": 4654800,
+                    "height": 3222000
+                },
+                {
+                    "type": "PICTURE (18)",
+                    "idx": 12,
+                    "left": 7920000,
+                    "top": 464400,
+                    "width": 2448000,
+                    "height": 3222000
+                },
+                {
+                    "type": "PICTURE (18)",
+                    "idx": 15,
+                    "left": 5385600,
+                    "top": 464400,
+                    "width": 2448000,
+                    "height": 3222000
+                },
+                {
+                    "type": "BODY (2)",
+                    "idx": 11,
+                    "left": 647699,
+                    "top": 42852,
+                    "width": 7920000,
+                    "height": 324000
+                },
+                {
+                    "type": "BODY (2)",
+                    "idx": 23,
+                    "left": 647699,
+                    "top": 3803258,
+                    "width": 4654800,
+                    "height": 3222000
+                },
+                {
+                    "type": "PICTURE (18)",
+                    "idx": 24,
+                    "left": 5385600,
+                    "top": 3805200,
+                    "width": 2448000,
+                    "height": 3222000
+                },
+                {
+                    "type": "PICTURE (18)",
+                    "idx": 25,
+                    "left": 7920000,
+                    "top": 3805200,
+                    "width": 2448000,
+                    "height": 3222000
+                },
+                {
+                    "type": "BODY (2)",
+                    "idx": 17,
+                    "left": 8639397,
+                    "top": 42851,
+                    "width": 1728565,
+                    "height": 324000
+                }
+            ]
+        },
+        {
+            "name": "14_제목 및 내용",
+            "placeholders": [
+                {
+                    "type": "BODY (2)",
+                    "idx": 10,
+                    "left": 648002,
+                    "top": 478800,
+                    "width": 2880000,
+                    "height": 6552000
+                },
+                {
+                    "type": "BODY (2)",
+                    "idx": 11,
+                    "left": 647699,
+                    "top": 42852,
+                    "width": 8640000,
+                    "height": 324000
+                },
+                {
+                    "type": "BODY (2)",
+                    "idx": 18,
+                    "left": 3600003,
+                    "top": 478800,
+                    "width": 6767528,
+                    "height": 6552000
+                },
+                {
+                    "type": "BODY (2)",
+                    "idx": 17,
+                    "left": 9359397,
+                    "top": 42852,
+                    "width": 1008565,
+                    "height": 324000
+                }
+            ]
+        },
+        {
+            "name": "16_제목 및 내용",
+            "placeholders": [
+                {
+                    "type": "BODY (2)",
+                    "idx": 11,
+                    "left": 647699,
+                    "top": 42852,
+                    "width": 8640000,
+                    "height": 324000
+                },
+                {
+                    "type": "BODY (2)",
+                    "idx": 19,
+                    "left": 647699,
+                    "top": 3792552,
+                    "width": 9720000,
+                    "height": 3205847
+                },
+                {
+                    "type": "BODY (2)",
+                    "idx": 17,
+                    "left": 9359397,
+                    "top": 42852,
+                    "width": 1008565,
+                    "height": 324000
+                },
+                {
+                    "type": "PICTURE (18)",
+                    "idx": 20,
+                    "left": 647700,
+                    "top": 464400,
+                    "width": 4805363,
+                    "height": 3240000
+                },
+                {
+                    "type": "PICTURE (18)",
+                    "idx": 21,
+                    "left": 5562336,
+                    "top": 464400,
+                    "width": 4805363,
+                    "height": 3240000
+                }
+            ]
+        },
+        {
+            "name": "15_제목 및 내용",
+            "placeholders": [
+                {
+                    "type": "BODY (2)",
+                    "idx": 10,
+                    "left": 648002,
+                    "top": 464815,
+                    "width": 9720000,
+                    "height": 6552000
+                },
+                {
+                    "type": "BODY (2)",
+                    "idx": 11,
+                    "left": 647699,
+                    "top": 42852,
+                    "width": 8640000,
+                    "height": 324000
+                },
+                {
+                    "type": "BODY (2)",
+                    "idx": 17,
+                    "left": 9287699,
+                    "top": 42838,
+                    "width": 1080000,
+                    "height": 324000
+                }
+            ]
+        }
+    ],
+    "sample_shapes": [
+        {
+            "name": "텍스트 개체 틀 7",
+            "type": "PLACEHOLDER (14)",
+            "left": 781665,
+            "top": 75624,
+            "width": 9438967,
+            "height": 489132,
+            "font": {
+                "name": null,
+                "size": null,
+                "color": null
+            }
+        },
+        {
+            "name": "텍스트 개체 틀 1",
+            "type": "PLACEHOLDER (14)",
+            "left": 780814,
+            "top": 667713,
+            "width": 9439200,
+            "height": 412932,
+            "font": {
+                "name": null,
+                "size": null,
+                "color": null
+            }
+        },
+        {
+            "name": "표 4",
+            "type": "TABLE (19)",
+            "left": 816079,
+            "top": 1183602,
+            "width": 9403935,
+            "height": 5745480
+        },
+        {
+            "name": "화살표: 위쪽 9",
+            "type": "AUTO_SHAPE (1)",
+            "left": 8539393,
+            "top": 683957,
+            "width": 323868,
+            "height": 380443
+        }
+    ]
+}

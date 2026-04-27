@@ -1,0 +1,47 @@
+{
+  "current_branch_id": "branch_cd169191",
+  "branches": {
+    "main": {
+      "branch_id": "main",
+      "name": "Main Timeline",
+      "parent_snapshot_id": null,
+      "created_at": "2026-04-10T20:21:19.868383",
+      "snapshots": [
+        "snap_0fdbd481"
+      ],
+      "narrative_log": [
+        {
+          "timestamp": "2026-04-10T20:50:48.360388",
+          "summary": "[연결 실패] [WinError 10054] 현재 연결은 원격 호스트에 의해 강제로 끊겼습니다"
+        }
+      ]
+    },
+    "branch_a8e3670d": {
+      "branch_id": "branch_a8e3670d",
+      "name": "Parallel World",
+      "parent_snapshot_id": "snap_0fdbd481",
+      "created_at": "2026-04-10T20:21:19.869454",
+      "snapshots": [
+        "snap_3a84bf90",
+        "snap_75cd08d6"
+      ]
+    },
+    "branch_f9f4e59e": {
+      "branch_id": "branch_f9f4e59e",
+      "name": "미스테리 루트",
+      "parent_snapshot_id": "snap_75cd08d6",
+      "created_at": "2026-04-10T20:22:17.662995",
+      "snapshots": [
+        "snap_fdd0451a"
+      ]
+    },
+    "branch_cd169191": {
+      "name": "Horizon Branch",
+      "created_at": "2026-04-10T20:25:36.866017",
+      "snapshots": [
+        "snap_fdd0451a"
+      ],
+      "parent_snapshot_id": "snap_fdd0451a"
+    }
+  }
+}

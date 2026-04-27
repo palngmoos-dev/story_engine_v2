@@ -1,0 +1,75 @@
+{
+  "canvas": {
+    "active_cards": [],
+    "story_beats": []
+  },
+  "stream": {
+    "pages": [],
+    "compressed_history": [],
+    "archive": [],
+    "groups": [],
+    "discarded": [],
+    "favorites": []
+  },
+  "multiverse": {
+    "timeline": "PRESENT"
+  },
+  "metrics": {
+    "suspicion": 0,
+    "pressure": 0,
+    "echo": 0,
+    "emotion": 0,
+    "cumulative_impact": 0
+  },
+  "evolution": {
+    "taste_vector": {},
+    "learning_rate": 0.1,
+    "mutation_rate": 0.02,
+    "layers": {
+      "hot": [],
+      "warm": [],
+      "cold": []
+    },
+    "history": []
+  },
+  "convergence": {
+    "finalize_mode": false,
+    "commit_candidates": {
+      "cards": [],
+      "groups": [],
+      "beats": []
+    },
+    "prune_candidates": {
+      "cards": [],
+      "groups": [],
+      "beats": []
+    },
+    "committed_core": {
+      "cards": [],
+      "groups": [],
+      "beats": [],
+      "themes": []
+    },
+    "dominant_story_profile": {
+      "core_theme": "잠재적 서사",
+      "core_tone": "중립",
+      "dominant_tags": [],
+      "preferred_timeline": "PRESENT",
+      "gravity_center": {}
+    }
+  },
+  "acceleration": {
+    "momentum_level": 1.1,
+    "sync_intensity": 0.5,
+    "luck_card_inventory": [],
+    "stagnation_score": 0,
+    "narrative_ailment": "Healthy",
+    "active_prescription": {},
+    "side_effect_count": 0
+  },
+  "metadata": {
+    "last_update": "2026-04-10T23:02:26.083553",
+    "total_scenes": 0,
+    "summary": "API Action: PICK"
+  }
+}

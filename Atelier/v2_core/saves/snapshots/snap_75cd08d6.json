@@ -1,0 +1,63 @@
+{
+  "snapshot_id": "snap_75cd08d6",
+  "branch_id": "branch_a8e3670d",
+  "timestamp": "2026-04-10T20:22:17.662412",
+  "state": {
+    "metrics": {
+      "timing": {
+        "suspicion": 0,
+        "pressure": 0,
+        "echo": 0
+      },
+      "emotion": 0,
+      "cumulative_impact": 0,
+      "total_scenes": 1
+    },
+    "canvas": {
+      "timeline_mode": "PRESENT",
+      "place": "카페",
+      "lead_character": null,
+      "support_characters": [],
+      "active_props": [],
+      "cinematic_nodes": {
+        "time": "낮",
+        "cinematic": "기본 구도",
+        "mood": "평범",
+        "sense": "균형",
+        "element": "없음",
+        "relationship": "일반",
+        "lifestyle": "일상복",
+        "audio": "자연음",
+        "music": "적막"
+      }
+    },
+    "narrative": {
+      "memory": [],
+      "notes": [],
+      "summary": "조용한 카페에서 시작된 의문의 대화."
+    },
+    "stream": {
+      "history": [
+        [
+          {
+            "category": "character",
+            "name": "수수께끼의 여인"
+          },
+          {
+            "category": "prop",
+            "name": "오래된 시계"
+          }
+        ]
+      ],
+      "archive": {
+        "discarded": [],
+        "stashed": [],
+        "favorites": []
+      }
+    },
+    "metadata": {
+      "last_update": "2026-04-10T20:22:17.662381"
+    }
+  },
+  "summary": "메인 타임라인: 첫 만남"
+}

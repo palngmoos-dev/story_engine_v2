@@ -1,0 +1,15 @@
+{
+  "current_branch_id": "main",
+  "branches": {
+    "main": {
+      "name": "Main Timeline",
+      "created_at": "2026-04-11T01:25:52.348032",
+      "snapshots": [
+        "snap_4ac58b13",
+        "snap_dbde03a8"
+      ],
+      "parent_snapshot_id": null,
+      "narrative_log": []
+    }
+  }
+}

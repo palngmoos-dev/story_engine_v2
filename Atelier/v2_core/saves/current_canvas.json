@@ -1,0 +1,28 @@
+{
+  "canvas": {
+    "active_cards": [],
+    "story_beats": []
+  },
+  "stream": {
+    "pages": [],
+    "archive": [],
+    "discarded": [],
+    "favorites": []
+  },
+  "multiverse": {
+    "branch_id": "main",
+    "timeline": "FUTURE"
+  },
+  "metrics": {
+    "suspicion": 0,
+    "pressure": 0,
+    "echo": 0,
+    "emotion": 0,
+    "cumulative_impact": 0
+  },
+  "metadata": {
+    "last_update": "2026-04-10T20:25:36.853756",
+    "total_scenes": 0,
+    "summary": "Criterion 1 Test"
+  }
+}

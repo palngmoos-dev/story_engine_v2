@@ -1,0 +1,115 @@
+{
+  "active_cards": [
+    {
+      "cid": "ai_a036cb",
+      "category": "audio",
+      "name": "빗소리",
+      "summary": "서사의 audio 요소를 더욱 풍성하게 만드는 영감의 카드입니다.",
+      "style_mood": "균형 잡힌 시네마틱 무드",
+      "tags": [],
+      "origin_id": null,
+      "variant_info": {
+        "timeline": "PRESENT",
+        "type": "ORIGINAL"
+      },
+      "is_revealed": false
+    },
+    {
+      "cid": "ai_171cfd",
+      "category": "universals",
+      "name": "심연",
+      "summary": "서사의 universals 요소를 더욱 풍성하게 만드는 영감의 카드입니다.",
+      "style_mood": "균형 잡힌 시네마틱 무드",
+      "tags": [],
+      "origin_id": null,
+      "variant_info": {
+        "timeline": "PRESENT",
+        "type": "ORIGINAL"
+      },
+      "is_revealed": false
+    },
+    {
+      "cid": "ai_6def6c",
+      "category": "props",
+      "name": "검",
+      "summary": "서사의 props 요소를 더욱 풍성하게 만드는 영감의 카드입니다.",
+      "style_mood": "균형 잡힌 시네마틱 무드",
+      "tags": [],
+      "origin_id": null,
+      "variant_info": {
+        "timeline": "PRESENT",
+        "type": "ORIGINAL"
+      },
+      "is_revealed": false
+    },
+    {
+      "cid": "ai_83878f",
+      "category": "moods",
+      "name": "비굴",
+      "summary": "서사의 moods 요소를 더욱 풍성하게 만드는 영감의 카드입니다.",
+      "style_mood": "균형 잡힌 시네마틱 무드",
+      "tags": [],
+      "origin_id": null,
+      "variant_info": {
+        "timeline": "PRESENT",
+        "type": "ORIGINAL"
+      },
+      "is_revealed": false
+    },
+    {
+      "cid": "ai_86b89e",
+      "category": "audio",
+      "name": "군중의웅성임",
+      "summary": "서사의 audio 요소를 더욱 풍성하게 만드는 영감의 카드입니다.",
+      "style_mood": "균형 잡힌 시네마틱 무드",
+      "tags": [],
+      "origin_id": null,
+      "variant_info": {
+        "timeline": "PRESENT",
+        "type": "ORIGINAL"
+      },
+      "is_revealed": false
+    }
+  ],
+  "characters": [],
+  "active_writer": {
+    "writer_id": "standard_director",
+    "name": "상업 영화 작가",
+    "domain": "영화/드라마",
+    "genre": "보편적 드라마",
+    "personality": "균형감 있는 흥행 지향형",
+    "style_rules": [
+      "기승전결의 명확함",
+      "보편적 공감대"
+    ],
+    "pacing": "balanced",
+    "is_locked": false
+  },
+  "is_writer_locked": false,
+  "current_scene_index": 1,
+  "scene_registry": {},
+  "current_scene": null,
+  "writer_recommendations": [],
+  "writer_history": [],
+  "writer_switch_log": [],
+  "wallet": {
+    "essence_balance": 100.0,
+    "tier": "DIRECTOR",
+    "is_infinite": true
+  },
+  "momentum": 1.0,
+  "sync": 0.5,
+  "taste_vector": {},
+  "learning_rate": 0.05,
+  "mutation_rate": 0.1,
+  "metadata": {
+    "last_update": "2026-04-13T19:12:25.673834",
+    "summary": "새로운 서사가 시작되었습니다.",
+    "stats": {
+      "total_drawn": 5,
+      "current_scene_draws": 5,
+      "total_burned": 0,
+      "current_scene_burns": 0
+    }
+  }
+}

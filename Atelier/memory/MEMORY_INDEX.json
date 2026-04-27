@@ -1,0 +1,8 @@
+{
+  "task": "옵시디언 보관소 통합 및 연동 확인",
+  "result": "Memory_Solaris 설정을 Atelier 폴더로 통합 완료 (단일 Vault 구조)",
+  "problem": "로그인/회원가입 불필요 (로컬 기반)",
+  "next": "피렌체 프로젝트 본 작업 진행",
+  "updated": "2026-04-25T01:49:06",
+  "trigger_default": "memory 체크하고 진행해"
+}

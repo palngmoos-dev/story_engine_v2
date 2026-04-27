@@ -1,0 +1,93 @@
+{
+    "slide_5": [
+        {
+            "name": "텍스트 개체 틀 1",
+            "type": "PLACEHOLDER (14)",
+            "text": "\n\n"
+        },
+        {
+            "name": "텍스트 개체 틀 2",
+            "type": "PLACEHOLDER (14)",
+            "text": "파리 공항 도착 후 숙소까지 이동 관련 안내"
+        },
+        {
+            "name": "텍스트 개체 틀 3",
+            "type": "PLACEHOLDER (14)",
+            "text": "1/3"
+        },
+        {
+            "name": "텍스트 개체 틀 1",
+            "type": "TEXT_BOX (17)",
+            "text": "숙소는 3터미널 구역에 위치하고 있으며 2터미널과는 거리가 있으므로, 공항 내 무료 셔틀 열차인 CDGVAL을 이용하여 이동하시면 됩니다. \n\n수하물을 찾으신 후 입국장으로 나오시면 아래 사진과 같이 CDGVAL 탑승장 이정표가 있으니 따라서 이동하시면 됩니다. \n\n\n\n"
+        },
+        {
+            "name": "그림 1",
+            "type": "PICTURE (13)",
+            "text": ""
+        },
+        {
+            "name": "화살표: 위쪽 6",
+            "type": "AUTO_SHAPE (1)",
+            "text": ""
+        }
+    ],
+    "slide_6": [
+        {
+            "name": "텍스트 개체 틀 2",
+            "type": "PLACEHOLDER (14)",
+            "text": "파리 공항 도착 후 숙소까지 이동 관련 안내"
+        },
+        {
+            "name": "텍스트 개체 틀 3",
+            "type": "PLACEHOLDER (14)",
+            "text": "2/3"
+        },
+        {
+            "name": "텍스트 개체 틀 1",
+            "type": "PLACEHOLDER (14)",
+            "text": "이정표를 따라 이동하시다 보면, 사진과 같이 Terminal 1 & 3 방향 셔틀 열차 이정표와 탑승장이 나옵니다.\n\n열차는 별도의 티켓 구매 없이 무료로 탑승하실 수 있습니다.(약 4분 간격 운행)"
+        },
+        {
+            "name": "그림 1",
+            "type": "PICTURE (13)",
+            "text": ""
+        },
+        {
+            "name": "그림 5",
+            "type": "PICTURE (13)",
+            "text": ""
+        },
+        {
+            "name": "화살표: 위쪽 6",
+            "type": "AUTO_SHAPE (1)",
+            "text": ""
+        }
+    ],
+    "slide_7": [
+        {
+            "name": "텍스트 개체 틀 1",
+            "type": "PLACEHOLDER (14)",
+            "text": "열차에 탑승하신 후 Terminal 3 – Roissypole에서 하차하시면 되며, 출구로 나오시면 아래 사진과 같이 오른편으로 Novotel 호텔 이정표가 보입니다. 이정표를 따라 1~2분만 걸으시면 로비에 도착합니다."
+        },
+        {
+            "name": "텍스트 개체 틀 2",
+            "type": "PLACEHOLDER (14)",
+            "text": "파리 공항 도착 후 숙소까지 이동 관련 안내"
+        },
+        {
+            "name": "텍스트 개체 틀 3",
+            "type": "PLACEHOLDER (14)",
+            "text": "3/3"
+        },
+        {
+            "name": "그림 5",
+            "type": "PICTURE (13)",
+            "text": ""
+        },
+        {
+            "name": "화살표: 위쪽 6",
+            "type": "AUTO_SHAPE (1)",
+            "text": ""
+        }
+    ]
+}

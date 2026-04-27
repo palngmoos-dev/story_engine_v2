@@ -1,0 +1,787 @@
+{
+  "canvas": {
+    "active_cards": [
+      {
+        "cid": "c_0",
+        "name": "카드 0",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_1",
+        "name": "카드 1",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_2",
+        "name": "카드 2",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_3",
+        "name": "카드 3",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_4",
+        "name": "카드 4",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_5",
+        "name": "카드 5",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_6",
+        "name": "카드 6",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_7",
+        "name": "카드 7",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_8",
+        "name": "카드 8",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_9",
+        "name": "카드 9",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_10",
+        "name": "카드 10",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_11",
+        "name": "카드 11",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_12",
+        "name": "카드 12",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_13",
+        "name": "카드 13",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_14",
+        "name": "카드 14",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_15",
+        "name": "카드 15",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_16",
+        "name": "카드 16",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_17",
+        "name": "카드 17",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_18",
+        "name": "카드 18",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_19",
+        "name": "카드 19",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_20",
+        "name": "카드 20",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_21",
+        "name": "카드 21",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_22",
+        "name": "카드 22",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_23",
+        "name": "카드 23",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_24",
+        "name": "카드 24",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_25",
+        "name": "카드 25",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_26",
+        "name": "카드 26",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_27",
+        "name": "카드 27",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_28",
+        "name": "카드 28",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_29",
+        "name": "카드 29",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_30",
+        "name": "카드 30",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_31",
+        "name": "카드 31",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_32",
+        "name": "카드 32",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_33",
+        "name": "카드 33",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_34",
+        "name": "카드 34",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_35",
+        "name": "카드 35",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_36",
+        "name": "카드 36",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_37",
+        "name": "카드 37",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_38",
+        "name": "카드 38",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_39",
+        "name": "카드 39",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_40",
+        "name": "카드 40",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_41",
+        "name": "카드 41",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_42",
+        "name": "카드 42",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_43",
+        "name": "카드 43",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_44",
+        "name": "카드 44",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_45",
+        "name": "카드 45",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_46",
+        "name": "카드 46",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_47",
+        "name": "카드 47",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_48",
+        "name": "카드 48",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_49",
+        "name": "카드 49",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_50",
+        "name": "카드 50",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_51",
+        "name": "카드 51",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_52",
+        "name": "카드 52",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_53",
+        "name": "카드 53",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_54",
+        "name": "카드 54",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_55",
+        "name": "카드 55",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_56",
+        "name": "카드 56",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_57",
+        "name": "카드 57",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_58",
+        "name": "카드 58",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_59",
+        "name": "카드 59",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_60",
+        "name": "카드 60",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_61",
+        "name": "카드 61",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_62",
+        "name": "카드 62",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_63",
+        "name": "카드 63",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_64",
+        "name": "카드 64",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_65",
+        "name": "카드 65",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_66",
+        "name": "카드 66",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_67",
+        "name": "카드 67",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_68",
+        "name": "카드 68",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_69",
+        "name": "카드 69",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_70",
+        "name": "카드 70",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_71",
+        "name": "카드 71",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_72",
+        "name": "카드 72",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_73",
+        "name": "카드 73",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_74",
+        "name": "카드 74",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_75",
+        "name": "카드 75",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_76",
+        "name": "카드 76",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_77",
+        "name": "카드 77",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_78",
+        "name": "카드 78",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_79",
+        "name": "카드 79",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_80",
+        "name": "카드 80",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_81",
+        "name": "카드 81",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_82",
+        "name": "카드 82",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_83",
+        "name": "카드 83",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_84",
+        "name": "카드 84",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_85",
+        "name": "카드 85",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_86",
+        "name": "카드 86",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_87",
+        "name": "카드 87",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_88",
+        "name": "카드 88",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_89",
+        "name": "카드 89",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_90",
+        "name": "카드 90",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_91",
+        "name": "카드 91",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_92",
+        "name": "카드 92",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_93",
+        "name": "카드 93",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_94",
+        "name": "카드 94",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_95",
+        "name": "카드 95",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_96",
+        "name": "카드 96",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_97",
+        "name": "카드 97",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_98",
+        "name": "카드 98",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      },
+      {
+        "cid": "c_99",
+        "name": "카드 99",
+        "summary": "동시성 테스트용",
+        "category": "events",
+        "tags": []
+      }
+    ],
+    "story_beats": []
+  },
+  "stream": {
+    "pages": [],
+    "compressed_history": [],
+    "archive": [],
+    "groups": [],
+    "discarded": [],
+    "favorites": []
+  },
+  "multiverse": {
+    "timeline": "PRESENT"
+  },
+  "metrics": {
+    "suspicion": 0,
+    "pressure": 0,
+    "echo": 0,
+    "emotion": 0,
+    "cumulative_impact": 0
+  },
+  "evolution": {
+    "taste_vector": {},
+    "learning_rate": 0.1,
+    "mutation_rate": 0.02,
+    "layers": {
+      "hot": [],
+      "warm": [],
+      "cold": []
+    },
+    "history": []
+  },
+  "convergence": {
+    "finalize_mode": false,
+    "commit_candidates": {
+      "cards": [],
+      "groups": [],
+      "beats": []
+    },
+    "prune_candidates": {
+      "cards": [],
+      "groups": [],
+      "beats": []
+    },
+    "committed_core": {
+      "cards": [],
+      "groups": [],
+      "beats": [],
+      "themes": []
+    },
+    "dominant_story_profile": {
+      "core_theme": "잠재적 서사",
+      "core_tone": "중립",
+      "dominant_tags": [],
+      "preferred_timeline": "PRESENT",
+      "gravity_center": {}
+    }
+  },
+  "acceleration": {
+    "momentum_level": 2.5,
+    "sync_intensity": 0.7,
+    "luck_card_inventory": [
+      {
+        "type": "NITRO_SWIFT",
+        "timestamp": "0.08540267269337598"
+      }
+    ],
+    "stagnation_score": 0,
+    "narrative_ailment": "Healthy",
+    "active_prescription": {},
+    "side_effect_count": 0,
+    "director_vision_mode": true,
+    "visual_settings": {
+      "style": "Cinematic",
+      "aspect_ratio": "21:9",
+      "grading": "Modern Film"
+    }
+  },
+  "metadata": {
+    "last_update": "2026-04-11T01:25:14.847436",
+    "total_scenes": 0,
+    "summary": "API Action: SURGE"
+  }
+}

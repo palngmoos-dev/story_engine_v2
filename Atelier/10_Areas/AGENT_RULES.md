@@ -23,7 +23,7 @@
 - 운영 원본: E:\myhub\writing
 - 개발 작업: E:\myhub\writing_dev
 - 백업 저장소: E:\myhub\backups
-- GitHub: https://github.com/palngmoos-dev/mybot_clean.git
+- GitHub: https://github.com/palngmoos-dev/moosking_abc
 
 ## 절대 금지
 - writing 직접 수정 금지
